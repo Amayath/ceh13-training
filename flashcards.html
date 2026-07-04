@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards — CEH13 Trainer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">CEH13<span>_trainer</span></div>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="flashcards.html" class="active">Flashcards</a>
+    <a href="notes.html">Fiches de cours</a>
+  </nav>
+</div>
+
+<div class="container">
+  <h1>Flashcards</h1>
+  <p class="subtitle">Clique sur la carte pour retourner, puis indique si tu la connaissais.</p>
+
+  <div class="toolbar">
+    <label>
+      Module :
+      <select id="module-select">
+        <option value="all">Tous les modules</option>
+      </select>
+    </label>
+    <label>
+      <input type="checkbox" id="unknown-only-check"> Réviser uniquement les cartes non maîtrisées
+    </label>
+  </div>
+
+  <div id="empty-state" class="empty-state" style="display:none;">
+    Aucune flashcard disponible pour cette sélection.
+  </div>
+
+  <div class="flashcard-wrap" id="fc-wrap" style="display:none;">
+    <div class="flashcard-meta" id="fc-progress"></div>
+    <div class="flashcard-inner">
+      <div class="flashcard" id="fc-card"></div>
+    </div>
+    <div class="flashcard-controls">
+      <button class="btn secondary" id="fc-prev">← Précédent</button>
+      <button class="btn secondary" id="fc-unknown">Pas sûr</button>
+      <button class="btn" id="fc-known">Je connais ✓</button>
+      <button class="btn secondary" id="fc-next">Suivant →</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/flashcards.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+  { "id": 1, "slug": "mod01", "title": "Introduction to Ethical Hacking", "domain": "Fondamentaux" },
+  { "id": 2, "slug": "mod02", "title": "Footprinting and Reconnaissance", "domain": "Reconnaissance" },
+  { "id": 3, "slug": "mod03", "title": "Scanning Networks", "domain": "Reconnaissance" },
+  { "id": 4, "slug": "mod04", "title": "Enumeration", "domain": "Reconnaissance" },
+  { "id": 5, "slug": "mod05", "title": "Vulnerability Analysis", "domain": "Analyse" },
+  { "id": 6, "slug": "mod06", "title": "System Hacking", "domain": "Attaque système" },
+  { "id": 7, "slug": "mod07", "title": "Malware Threats", "domain": "Attaque système" },
+  { "id": 8, "slug": "mod08", "title": "Sniffing", "domain": "Réseau" },
+  { "id": 9, "slug": "mod09", "title": "Social Engineering", "domain": "Humain" },
+  { "id": 10, "slug": "mod10", "title": "Denial-of-Service", "domain": "Réseau" },
+  { "id": 11, "slug": "mod11", "title": "Session Hijacking", "domain": "Réseau" },
+  { "id": 12, "slug": "mod12", "title": "Evading IDS, Firewalls, and Honeypots", "domain": "Évasion" },
+  { "id": 13, "slug": "mod13", "title": "Hacking Web Servers", "domain": "Web" },
+  { "id": 14, "slug": "mod14", "title": "Hacking Web Applications", "domain": "Web" },
+  { "id": 15, "slug": "mod15", "title": "SQL Injection", "domain": "Web" },
+  { "id": 16, "slug": "mod16", "title": "Hacking Wireless Networks", "domain": "Sans fil" },
+  { "id": 17, "slug": "mod17", "title": "Hacking Mobile Platforms", "domain": "Mobile" },
+  { "id": 18, "slug": "mod18", "title": "IoT and OT Hacking", "domain": "IoT/OT" },
+  { "id": 19, "slug": "mod19", "title": "Cloud Computing", "domain": "Cloud" },
+  { "id": 20, "slug": "mod20", "title": "Cryptography", "domain": "Cryptographie" }
+]

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — CEH13 Trainer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">CEH13<span>_trainer</span></div>
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="quiz.html" class="active">Quiz</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="notes.html">Fiches de cours</a>
+  </nav>
+</div>
+
+<div class="container">
+  <h1>Quiz</h1>
+  <p class="subtitle">Questions issues des examens blancs et practice tests CEH v13.</p>
+
+  <div id="setup-panel" class="card">
+    <h2>Configurer le quiz</h2>
+    <div class="toolbar">
+      <label>
+        Source :
+        <select id="source-select">
+          <option value="all">Toutes les sources</option>
+        </select>
+      </label>
+      <label>
+        Nombre de questions :
+        <input type="number" id="count-input" min="5" max="100" value="20">
+      </label>
+      <label>
+        <input type="checkbox" id="shuffle-check" checked> Mélanger
+      </label>
+    </div>
+    <button class="btn" id="start-btn">Démarrer le quiz</button>
+  </div>
+
+  <div id="quiz-panel" style="display:none;">
+    <div class="quiz-progress" id="quiz-progress"></div>
+    <div class="card">
+      <div class="source-tag" id="q-source"></div>
+      <div class="question-text" id="q-text"></div>
+      <div id="q-options"></div>
+      <div class="explanation" id="q-explanation" style="display:none;"></div>
+    </div>
+    <div class="quiz-nav">
+      <button class="btn secondary" id="quit-btn">Quitter</button>
+      <button class="btn" id="next-btn" disabled>Suivant</button>
+    </div>
+  </div>
+
+  <div id="result-panel" class="card" style="display:none;">
+    <h2>Résultat</h2>
+    <p id="result-summary" style="font-size:16px;"></p>
+    <button class="btn" id="restart-btn">Refaire un quiz</button>
+  </div>
+</div>
+
+<script src="js/storage.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

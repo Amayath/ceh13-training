@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEH13 Trainer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">CEH13<span>_trainer</span></div>
+  <nav>
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="notes.html">Fiches de cours</a>
+  </nav>
+</div>
+
+<div class="container">
+  <h1>Prépa CEH v13</h1>
+  <p class="subtitle">Suis ta progression sur les 20 modules du programme et entraîne-toi avec plus de 500 questions.</p>
+
+  <div class="grid" id="stats-grid" style="margin-bottom: 36px;"></div>
+
+  <h2>Modules</h2>
+  <div class="grid" id="modules-grid"></div>
+</div>
+
+<script src="js/storage.js"></script>
+<script>
+async function main() {
+  const [modules, questions] = await Promise.all([
+    fetch("data/modules.json").then(r => r.json()),
+    fetch("data/questions.json").then(r => r.json()),
+  ]);
+
+  const state = Storage.load();
+
+  const attempts = state.quizAttempts;
+  const totalCorrect = attempts.reduce((a, x) => a + x.correct, 0);
+  const totalAnswered = attempts.reduce((a, x) => a + x.total, 0);
+  const accuracy = totalAnswered ? Math.round((totalCorrect / totalAnswered) * 100) : 0;
+  const flashKnown = Object.values(state.flashcardStats).filter(f => f.known).length;
+  const notesReadCount = Object.keys(state.notesRead).length;
+
+  const statsGrid = document.getElementById("stats-grid");
+  statsGrid.innerHTML = `
+    <div class="card stat-card">
+      <div class="stat-value">${questions.length}</div>
+      <div class="stat-label">Questions disponibles</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-value">${attempts.length}</div>
+      <div class="stat-label">Quiz passés</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-value">${accuracy}%</div>
+      <div class="stat-label">Taux de réussite global</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-value">${notesReadCount}/${modules.length}</div>
+      <div class="stat-label">Modules consultés</div>
+    </div>
+  `;
+
+  const modulesGrid = document.getElementById("modules-grid");
+  modulesGrid.innerHTML = modules.map(m => {
+    const slug = m.slug.replace("mod", "");
+    const read = state.notesRead[m.slug];
+    return `
+      <a class="card module-card" href="notes.html?m=${m.slug}">
+        <div class="mod-id">MODULE ${String(m.id).padStart(2, "0")}</div>
+        <div class="mod-domain">${m.domain}</div>
+        <div class="mod-title">${m.title}</div>
+        <div class="progress-bar"><div style="width:${read ? 100 : 0}%"></div></div>
+        <div class="progress-text">${read ? "Consulté" : "Pas encore consulté"}</div>
+      </a>
+    `;
+  }).join("");
+}
+main();
+</script>
+</body>
+</html>

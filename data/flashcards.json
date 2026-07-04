@@ -1,0 +1,1190 @@
+[
+  {
+    "id": "mod01-1",
+    "module": "mod01",
+    "front": "Quels sont les 5 éléments de l'Information Security ?",
+    "back": "Confidentiality, Integrity, Availability, Authenticity, Non-Repudiation."
+  },
+  {
+    "id": "mod01-2",
+    "module": "mod01",
+    "front": "Quelle est la formule d'une attaque selon CEH ?",
+    "back": "Attack = Motive (Goal) + Method (TTP) + Vulnerability"
+  },
+  {
+    "id": "mod01-3",
+    "module": "mod01",
+    "front": "TTP : que signifient Tactics, Techniques, Procedures ?",
+    "back": "Tactics = stratégie globale de l'attaque du début à la fin. Techniques = méthodes techniques pour des résultats intermédiaires. Procedures = approche systématique suivie pour lancer l'attaque."
+  },
+  {
+    "id": "mod01-4",
+    "module": "mod01",
+    "front": "Quelles sont les 5 catégories d'attaques selon l'IATF ?",
+    "back": "Passive, Active, Close-in, Insider, Distribution."
+  },
+  {
+    "id": "mod01-5",
+    "module": "mod01",
+    "front": "Donne 2 exemples d'attaques passives.",
+    "back": "Sniffing/eavesdropping, footprinting, analyse de trafic réseau, déchiffrement de trafic faiblement chiffré."
+  },
+  {
+    "id": "mod01-6",
+    "module": "mod01",
+    "front": "Qu'est-ce qu'une attaque \"Close-in\" ?",
+    "back": "Attaque nécessitant une proximité physique avec la cible : shoulder surfing, dumpster diving, eavesdropping."
+  },
+  {
+    "id": "mod01-7",
+    "module": "mod01",
+    "front": "Différence entre White Hat, Black Hat et Gray Hat ?",
+    "back": "White Hat = pentesteur autorisé, but défensif. Black Hat = usage malveillant/illégal. Gray Hat = entre les deux, peut découvrir des failles sans permission puis les signaler."
+  },
+  {
+    "id": "mod01-8",
+    "module": "mod01",
+    "front": "Qu'est-ce qu'un Suicide Hacker ?",
+    "back": "Un hacker qui vise à abattre une infrastructure critique pour une cause, sans se soucier des conséquences légales (comme un kamikaze)."
+  },
+  {
+    "id": "mod01-9",
+    "module": "mod01",
+    "front": "Qu'est-ce qu'un Blue Hat Hacker ?",
+    "back": "Un professionnel de sécurité engagé temporairement par une entreprise pour tester un produit/système avant sa sortie."
+  },
+  {
+    "id": "mod01-10",
+    "module": "mod01",
+    "front": "Qu'est-ce qui distingue un Ethical Hacker d'un Cracker ?",
+    "back": "Le consentement : l'ethical hacker a l'autorisation explicite (contrat signé) du propriétaire du système, et rend son travail transparent."
+  },
+  {
+    "id": "mod01-11",
+    "module": "mod01",
+    "front": "Quelles sont les 5 phases de la CEH Hacking Methodology ?",
+    "back": "1. Reconnaissance, 2. Scanning, 3. Gaining Access, 4. Maintaining Access, 5. Clearing Tracks."
+  },
+  {
+    "id": "mod01-12",
+    "module": "mod01",
+    "front": "Quelle est la différence entre reconnaissance passive et active ?",
+    "back": "Passive = pas d'interaction directe avec la cible (sources publiques). Active = interaction directe (scan de ports, détection d'hôtes)."
+  },
+  {
+    "id": "mod01-13",
+    "module": "mod01",
+    "front": "Quelles sont les 7 phases du Cyber Kill Chain (Lockheed Martin) ?",
+    "back": "1. Reconnaissance, 2. Weaponization, 3. Delivery, 4. Exploitation, 5. Installation, 6. Command and Control, 7. Actions on Objectives."
+  },
+  {
+    "id": "mod01-14",
+    "module": "mod01",
+    "front": "Que représente le MITRE ATT&CK Framework ?",
+    "back": "Une base de connaissances mondiale des tactiques et techniques d'adversaires, basée sur des observations réelles (Enterprise, Mobile, ICS)."
+  },
+  {
+    "id": "mod01-15",
+    "module": "mod01",
+    "front": "Quelles sont les 4 méta-features du Diamond Model of Intrusion Analysis ?",
+    "back": "Adversary, Infrastructure, Capability, Victim."
+  },
+  {
+    "id": "mod01-16",
+    "module": "mod01",
+    "front": "Qu'est-ce que le Defense-in-Depth ?",
+    "back": "Stratégie de sécurité qui empile plusieurs couches de protection : une brèche dans une couche ne mène qu'à la couche suivante, pas à une compromission totale."
+  },
+  {
+    "id": "mod01-17",
+    "module": "mod01",
+    "front": "Quelle est la formule du risque (Risk) ?",
+    "back": "Risk = Threat × Vulnerability × Impact (ou Asset Value). Level of Risk = Consequence × Likelihood."
+  },
+  {
+    "id": "mod01-18",
+    "module": "mod01",
+    "front": "Quelles sont les 4 phases du Risk Management ?",
+    "back": "Risk Identification, Risk Assessment, Risk Treatment, Risk Tracking and Review."
+  },
+  {
+    "id": "mod01-19",
+    "module": "mod01",
+    "front": "Quels sont les 4 types de Cyber Threat Intelligence (CTI) ?",
+    "back": "Strategic (haut niveau, dirigeants), Tactical (TTPs, managers IT/SOC), Operational (attaque spécifique en cours, security managers), Technical (IOCs, SOC/IR teams)."
+  },
+  {
+    "id": "mod01-20",
+    "module": "mod01",
+    "front": "Qu'est-ce qu'une vulnérabilité \"inherent technology weakness\" ?",
+    "back": "Une faiblesse intrinsèque au matériel/logiciel qui le rend structurellement vulnérable à certains types d'attaques (ex : anciens navigateurs vulnérables au MITM/DoS)."
+  },
+  {
+    "id": "mod02-1",
+    "module": "mod02",
+    "front": "Quelle est la différence entre Footprinting passif et actif ?",
+    "back": "Passif = collecte sans interaction directe avec la cible. Actif = interaction directe avec le système cible pour obtenir des infos."
+  },
+  {
+    "id": "mod02-2",
+    "module": "mod02",
+    "front": "Que fait l'opérateur Google 'filetype:' ?",
+    "back": "Restreint les résultats à un type de fichier précis (ex : filetype:pdf)."
+  },
+  {
+    "id": "mod02-3",
+    "module": "mod02",
+    "front": "Que fait l'opérateur Google 'inurl:' ?",
+    "back": "Trouve des pages contenant un mot-clé spécifique dans l'URL."
+  },
+  {
+    "id": "mod02-4",
+    "module": "mod02",
+    "front": "Différence entre 'intitle:' et 'allintitle:' ?",
+    "back": "intitle: cherche un mot dans le titre. allintitle: exige que TOUS les mots-clés donnés apparaissent dans le titre (plus strict)."
+  },
+  {
+    "id": "mod02-5",
+    "module": "mod02",
+    "front": "À quoi sert MX Toolbox en email footprinting ?",
+    "back": "À analyser les en-têtes d'un email (Analyze Headers) pour vérifier son authenticité — un résultat 'pass' indique généralement un email légitime."
+  },
+  {
+    "id": "mod02-6",
+    "module": "mod02",
+    "front": "Quel type de requête DNS permet de tenter un zone transfer ?",
+    "back": "La requête AXFR (Asynchronous Full Transfer Zone), utilisable via dig."
+  },
+  {
+    "id": "mod02-7",
+    "module": "mod02",
+    "front": "Quel outil CLI Kali sert à automatiser la découverte de sous-domaines via plusieurs moteurs de recherche ?",
+    "back": "Sublist3r (ex : sublist3r -d domaine -b)."
+  },
+  {
+    "id": "mod02-8",
+    "module": "mod02",
+    "front": "Que fait theHarvester ?",
+    "back": "Outil CLI de footprinting DNS/email qui collecte emails, sous-domaines, hôtes à partir de sources publiques (ex : theharvester -d domaine.com -b source)."
+  },
+  {
+    "id": "mod02-9",
+    "module": "mod02",
+    "front": "Qu'est-ce que Shodan ?",
+    "back": "Un moteur de recherche qui scanne Internet pour cataloguer les devices connectés (serveurs, routeurs, webcams, IoT) avec leurs IP, ports ouverts et services."
+  },
+  {
+    "id": "mod02-10",
+    "module": "mod02",
+    "front": "À quoi sert Recon-ng ?",
+    "back": "Framework de reconnaissance OSINT modulaire (Kali Linux) organisé en workspaces et modules installables via marketplace."
+  },
+  {
+    "id": "mod02-11",
+    "module": "mod02",
+    "front": "Quel outil CLI permet de retrouver un pseudonyme sur de nombreux réseaux sociaux ?",
+    "back": "Sherlock (ex : sherlock username)."
+  },
+  {
+    "id": "mod02-12",
+    "module": "mod02",
+    "front": "tracert / traceroute : à quoi ça sert ?",
+    "back": "À tracer le chemin (les hops routeurs) emprunté par les paquets entre la machine locale et une destination."
+  },
+  {
+    "id": "mod03-1",
+    "module": "mod03",
+    "front": "Que fait l'option Nmap -sS ?",
+    "back": "SYN Scan / Stealth Scan / half-open scan : envoie un SYN, n'achève pas la poignée de main à trois voies (three-way handshake)."
+  },
+  {
+    "id": "mod03-2",
+    "module": "mod03",
+    "front": "Différence entre -sS et -sT sur Nmap ?",
+    "back": "-sS = SYN scan (half-open, furtif). -sT = TCP Connect scan (poignée de main complète), c'est le scan par défaut sans privilèges root."
+  },
+  {
+    "id": "mod03-3",
+    "module": "mod03",
+    "front": "Quels flags TCP sont activés lors d'un Xmas Scan (-sX) ?",
+    "back": "FIN, PSH et URG activés simultanément."
+  },
+  {
+    "id": "mod03-4",
+    "module": "mod03",
+    "front": "Que fait l'option Nmap -sV ?",
+    "back": "Service Version Detection : identifie la version exacte du logiciel qui tourne sur les ports ouverts."
+  },
+  {
+    "id": "mod03-5",
+    "module": "mod03",
+    "front": "Que fait l'option Nmap -A ?",
+    "back": "Scan avancé : combine OS Detection (-O), Version Detection (-sV), Script Scan (-sC) et traceroute."
+  },
+  {
+    "id": "mod03-6",
+    "module": "mod03",
+    "front": "Quel timing template Nmap privilégier pour un scan furtif ?",
+    "back": "-T0 ou -T1 (le plus lent, donc le plus discret)."
+  },
+  {
+    "id": "mod03-7",
+    "module": "mod03",
+    "front": "À quoi sert l'option Nmap -D ?",
+    "back": "Decoy scan : ajoute de fausses IP sources pour masquer la véritable origine du scan."
+  },
+  {
+    "id": "mod03-8",
+    "module": "mod03",
+    "front": "Que fait --spoof-mac sur Nmap ?",
+    "back": "Usurpe (spoof) l'adresse MAC utilisée pendant le scan."
+  },
+  {
+    "id": "mod03-9",
+    "module": "mod03",
+    "front": "Qu'est-ce que Zenmap ?",
+    "back": "L'interface graphique (GUI) officielle de Nmap, offrant les mêmes capacités avec une prise en main plus simple."
+  },
+  {
+    "id": "mod03-10",
+    "module": "mod03",
+    "front": "Quel outil permet de créer des paquets TCP/IP personnalisés en CLI (utile pour scan/flood/spoofing) ?",
+    "back": "Hping3."
+  },
+  {
+    "id": "mod03-11",
+    "module": "mod03",
+    "front": "Sur Hping3, que signifie l'option --flood ?",
+    "back": "Envoie les paquets le plus rapidement possible, sans attendre ni afficher les réponses (souvent utilisé en test DoS)."
+  },
+  {
+    "id": "mod03-12",
+    "module": "mod03",
+    "front": "Quelle commande Nmap teste tous les 65535 ports ?",
+    "back": "-p- (scan complet de tous les ports TCP/UDP)."
+  },
+  {
+    "id": "mod03-13",
+    "module": "mod03",
+    "front": "Que fait Netdiscover en mode -p ?",
+    "back": "Mode passif : écoute le trafic ARP du réseau sans envoyer activement de paquets."
+  },
+  {
+    "id": "mod04-1",
+    "module": "mod04",
+    "front": "Sur quels ports fonctionne NetBIOS ?",
+    "back": "UDP 137, UDP 138, TCP 139."
+  },
+  {
+    "id": "mod04-2",
+    "module": "mod04",
+    "front": "Sur quels ports fonctionne SNMP ?",
+    "back": "UDP 161 (requêtes) et UDP 162 (traps)."
+  },
+  {
+    "id": "mod04-3",
+    "module": "mod04",
+    "front": "Sur quel port fonctionne SMB ?",
+    "back": "TCP 445."
+  },
+  {
+    "id": "mod04-4",
+    "module": "mod04",
+    "front": "Sur quel port fonctionne NFS ?",
+    "back": "UDP 2049."
+  },
+  {
+    "id": "mod04-5",
+    "module": "mod04",
+    "front": "Sur quel port fonctionne SMTP ?",
+    "back": "TCP 25."
+  },
+  {
+    "id": "mod04-6",
+    "module": "mod04",
+    "front": "Sur quel port fonctionne DNS ?",
+    "back": "UDP 53 (TCP 53 utilisé pour les zone transfers)."
+  },
+  {
+    "id": "mod04-7",
+    "module": "mod04",
+    "front": "Quelle commande Windows liste les connexions actives et ports en écoute ?",
+    "back": "netstat -a"
+  },
+  {
+    "id": "mod04-8",
+    "module": "mod04",
+    "front": "Quel outil CLI permet une énumération SNMP rapide (liste comptes/devices) ?",
+    "back": "snmp-check <target ip>"
+  },
+  {
+    "id": "mod04-9",
+    "module": "mod04",
+    "front": "Que signifie un port SNMP indiqué 'filtered' lors d'un scan ?",
+    "back": "Qu'un firewall est probablement présent et bloque/filtre les paquets vers ce port."
+  },
+  {
+    "id": "mod04-10",
+    "module": "mod04",
+    "front": "Quel script Nmap NSE permet une énumération NetBIOS sur le port 139 ?",
+    "back": "nmap -p139 --script=nbstat.nse <target ip>"
+  },
+  {
+    "id": "mod05-1",
+    "module": "mod05",
+    "front": "Quelle est la plage CVSS pour une vulnérabilité 'Critical' ?",
+    "back": "9.0 à 10.0 — risque immédiat, facilement exploitable."
+  },
+  {
+    "id": "mod05-2",
+    "module": "mod05",
+    "front": "Quelle est la plage CVSS pour une vulnérabilité 'High' ?",
+    "back": "7.0 à 8.9."
+  },
+  {
+    "id": "mod05-3",
+    "module": "mod05",
+    "front": "Quelles sont les 6 étapes du processus de Vulnerability Analysis ?",
+    "back": "Asset Discovery, Vulnerability Scanning, Result Analysis, Prioritization, Remediation, Reporting & Monitoring."
+  },
+  {
+    "id": "mod05-4",
+    "module": "mod05",
+    "front": "Quel outil est spécifique au scan de vulnérabilités Windows ?",
+    "back": "MBSA (Microsoft Baseline Security Analyzer)."
+  },
+  {
+    "id": "mod05-5",
+    "module": "mod05",
+    "front": "Quel outil open-source scanne les vulnérabilités d'un serveur web ?",
+    "back": "Nikto."
+  },
+  {
+    "id": "mod05-6",
+    "module": "mod05",
+    "front": "À quoi sert Qualys SSL Labs ?",
+    "back": "À détecter les mauvaises configurations SSL/TLS d'un site."
+  },
+  {
+    "id": "mod05-7",
+    "module": "mod05",
+    "front": "À quoi sert Trivy ?",
+    "back": "Scanner de vulnérabilités pour conteneurs et environnements cloud."
+  },
+  {
+    "id": "mod05-8",
+    "module": "mod05",
+    "front": "Sur Nikto, que fait l'option -Tuning x ?",
+    "back": "Cible des types de tests spécifiques lors du scan ; 'x' signifie que tous les tests de tuning sont sélectionnés."
+  },
+  {
+    "id": "mod05-9",
+    "module": "mod05",
+    "front": "Quel est le but principal d'Acunetix ?",
+    "back": "Scanner de vulnérabilités pour sites web, applications web et API."
+  },
+  {
+    "id": "mod06-1",
+    "module": "mod06",
+    "front": "Quelle est la différence fondamentale entre hashing et encryption ?",
+    "back": "Le hashing est à sens unique (one-way, non réversible). L'encryption est réversible (two-way) grâce à une clé."
+  },
+  {
+    "id": "mod06-2",
+    "module": "mod06",
+    "front": "Différence entre chiffrement symétrique et asymétrique ?",
+    "back": "Symétrique = même clé pour chiffrer et déchiffrer (ex: AES). Asymétrique = clé publique pour chiffrer, clé privée pour déchiffrer (ex: RSA)."
+  },
+  {
+    "id": "mod06-3",
+    "module": "mod06",
+    "front": "Quelles sont les 5 catégories de password attacks selon CEH ?",
+    "back": "Online, Offline, Non-Electronic, Active, Passive."
+  },
+  {
+    "id": "mod06-4",
+    "module": "mod06",
+    "front": "Donne un exemple d'attaque de mot de passe 'Non-Electronic'.",
+    "back": "Phishing, shoulder surfing, dumpster diving, pretexting (manipulation physique/psychologique, pas technique)."
+  },
+  {
+    "id": "mod06-5",
+    "module": "mod06",
+    "front": "Quel outil sert à identifier le type d'un hash avant de le casser ?",
+    "back": "hash-identifier."
+  },
+  {
+    "id": "mod06-6",
+    "module": "mod06",
+    "front": "Sur Hydra, à quoi servent les options -l et -P ?",
+    "back": "-l = nom d'utilisateur connu. -P = fichier dictionnaire de mots de passe à tester."
+  },
+  {
+    "id": "mod06-7",
+    "module": "mod06",
+    "front": "Que fait la commande 'unshadow passwd.txt shadow.txt > hash.txt' ?",
+    "back": "Combine /etc/passwd et /etc/shadow en un seul fichier de hashs exploitable par John the Ripper."
+  },
+  {
+    "id": "mod06-8",
+    "module": "mod06",
+    "front": "Que génère l'outil CUPP ?",
+    "back": "Un dictionnaire de mots de passe personnalisé à partir d'informations sur la cible (nom, date de naissance, partenaire, mots spéciaux)."
+  },
+  {
+    "id": "mod06-9",
+    "module": "mod06",
+    "front": "À quoi sert CeWL ?",
+    "back": "Crawler Ruby qui extrait les mots uniques d'un site web pour construire une wordlist personnalisée (utilisable avec Hydra/John/Hashcat)."
+  },
+  {
+    "id": "mod06-10",
+    "module": "mod06",
+    "front": "Que capture l'outil Responder sur un réseau local ?",
+    "back": "Des hashs (généralement NTLM) en se faisant passer pour des services sur le LAN."
+  },
+  {
+    "id": "mod06-11",
+    "module": "mod06",
+    "front": "Que fait msfvenom ?",
+    "back": "Génère des payloads personnalisés (Metasploit) à embarquer dans un fichier ou envoyer sur le réseau pour exploiter une cible."
+  },
+  {
+    "id": "mod06-12",
+    "module": "mod06",
+    "front": "Qu'est-ce que exploit/multi/handler dans Metasploit ?",
+    "back": "Ce n'est pas un exploit classique mais un payload handler : il écoute une connexion entrante depuis un payload déjà exécuté sur la cible."
+  },
+  {
+    "id": "mod06-13",
+    "module": "mod06",
+    "front": "Qu'est-ce qu'Armitage ?",
+    "back": "Interface graphique pour Metasploit facilitant la visualisation du réseau, l'exploitation et la collaboration en équipe."
+  },
+  {
+    "id": "mod06-14",
+    "module": "mod06",
+    "front": "Qu'est-ce que la stéganographie, et en quoi diffère-t-elle du chiffrement ?",
+    "back": "Cacher une information dans un support qui paraît normal (image, audio) de sorte que personne ne sache qu'elle existe — contrairement au chiffrement qui rend l'info illisible mais visiblement présente."
+  },
+  {
+    "id": "mod07-1",
+    "module": "mod07",
+    "front": "Quelle est la différence entre un Virus et un Worm ?",
+    "back": "Le Virus a besoin d'une action utilisateur et s'attache à un fichier hôte. Le Worm se propage automatiquement sur le réseau sans interaction utilisateur (auto-réplicant)."
+  },
+  {
+    "id": "mod07-2",
+    "module": "mod07",
+    "front": "Qu'est-ce qui caractérise un Rootkit ?",
+    "back": "Il cache sa présence sur le système et donne un accès privilégié à l'attaquant ; très difficile à détecter, utilisé pour l'espionnage/accès persistant."
+  },
+  {
+    "id": "mod07-3",
+    "module": "mod07",
+    "front": "Qu'est-ce qu'un Fileless Malware ?",
+    "back": "Un malware qui opère entièrement en mémoire (RAM) sans laisser de fichier sur le disque, ce qui le rend difficile à détecter par un antivirus classique (ex : attaques PowerShell)."
+  },
+  {
+    "id": "mod07-4",
+    "module": "mod07",
+    "front": "Qu'est-ce qu'un Botnet ?",
+    "back": "Un réseau de machines infectées contrôlées à distance par un attaquant (botmaster), utilisé notamment pour des attaques DDoS (ex : Mirai)."
+  },
+  {
+    "id": "mod07-5",
+    "module": "mod07",
+    "front": "Sur quel port TCP classique tournait le trojan Back Orifice ?",
+    "back": "Port 31337."
+  },
+  {
+    "id": "mod07-6",
+    "module": "mod07",
+    "front": "Différence entre Static et Dynamic Malware Analysis ?",
+    "back": "Static = examen du code/métadonnées SANS exécuter le malware. Dynamic = exécution du malware dans un environnement sandboxé pour observer son comportement réel."
+  },
+  {
+    "id": "mod07-7",
+    "module": "mod07",
+    "front": "Quel outil en ligne permet un scan multi-moteurs antivirus d'un fichier suspect (analyse statique) ?",
+    "back": "VirusTotal (ou Hybrid Analysis)."
+  },
+  {
+    "id": "mod07-8",
+    "module": "mod07",
+    "front": "À quoi sert Regshot ?",
+    "back": "Comparer des snapshots du registre Windows et du système de fichiers avant/après un événement pour du system baselining (analyse dynamique)."
+  },
+  {
+    "id": "mod07-9",
+    "module": "mod07",
+    "front": "Qu'est-ce que le Host Integrity Monitoring (HIM) ?",
+    "back": "Une pratique de sécurité qui vérifie qu'un hôte n'a pas été altéré de façon non autorisée — composant clé des HIDS/HIPS (port, process, registry, services, startup, event log monitoring...)."
+  },
+  {
+    "id": "mod07-10",
+    "module": "mod07",
+    "front": "Qu'est-ce qu'un RAT (Remote Access Trojan) ? Donne 2 exemples.",
+    "back": "Un trojan qui permet à un attaquant de contrôler à distance la machine d'une victime. Exemples : NetBus, njRAT (Bladabindi)."
+  },
+  {
+    "id": "mod08-1",
+    "module": "mod08",
+    "front": "Différence entre Active Sniffing et Passive Sniffing ?",
+    "back": "Active = envoie activement des paquets pour intercepter le trafic sur réseau switché (ARP spoofing, MAC flooding, DHCP starvation). Passive = écoute silencieuse sans interférer, sur hub/réseau broadcast."
+  },
+  {
+    "id": "mod08-2",
+    "module": "mod08",
+    "front": "Qu'est-ce que le MAC Flooding ?",
+    "back": "Envoyer un grand nombre de fausses adresses MAC à un switch pour saturer sa table CAM, le forçant à broadcaster tout le trafic sur tous les ports (facilitant le sniffing)."
+  },
+  {
+    "id": "mod08-3",
+    "module": "mod08",
+    "front": "Quel outil Linux permet de réaliser une attaque de MAC Flooding ?",
+    "back": "Macof (ex: macof -i eth0 -d <ip cible>)."
+  },
+  {
+    "id": "mod08-4",
+    "module": "mod08",
+    "front": "Qu'est-ce que le DHCP Starvation ?",
+    "back": "Une attaque DoS où l'attaquant inonde le serveur DHCP de fausses requêtes pour épuiser le pool d'adresses IP disponibles, empêchant les utilisateurs légitimes d'en obtenir une."
+  },
+  {
+    "id": "mod08-5",
+    "module": "mod08",
+    "front": "Quel outil est utilisé pour l'attaque DHCP Starvation (couche 2) ?",
+    "back": "Yersinia (ex: yersinia dhcp -attack 1 -dest <mac cible>)."
+  },
+  {
+    "id": "mod08-6",
+    "module": "mod08",
+    "front": "Qu'est-ce que l'ARP Poisoning/Spoofing ?",
+    "back": "Envoyer de faux messages ARP sur le réseau local pour lier sa propre adresse MAC à l'IP d'un autre device (ex: le routeur), détournant ainsi le trafic vers l'attaquant."
+  },
+  {
+    "id": "mod08-7",
+    "module": "mod08",
+    "front": "Quel outil Windows classique permet de réaliser une attaque ARP Poisoning ?",
+    "back": "Cain and Abel."
+  },
+  {
+    "id": "mod08-8",
+    "module": "mod08",
+    "front": "Quel outil permet de détecter une attaque ARP Poisoning ?",
+    "back": "XArp."
+  },
+  {
+    "id": "mod08-9",
+    "module": "mod08",
+    "front": "Quel outil CLI Linux permet de changer l'adresse MAC d'une interface ?",
+    "back": "macchanger."
+  },
+  {
+    "id": "mod08-10",
+    "module": "mod08",
+    "front": "Sur quel type de réseau le sniffing passif est-il le plus efficace, et pourquoi ?",
+    "back": "Sur un hub/réseau broadcast, car tout le trafic est visible par tous les devices sans besoin d'interférer activement."
+  },
+  {
+    "id": "mod09-1",
+    "module": "mod09",
+    "front": "Quelle est la différence entre Phishing et Spear Phishing ?",
+    "back": "Phishing = attaque de masse générique. Spear Phishing = attaque ciblée sur un individu/organisation précis, utilisant des informations personnelles pour paraître crédible."
+  },
+  {
+    "id": "mod09-2",
+    "module": "mod09",
+    "front": "Qu'est-ce que le Whaling ?",
+    "back": "Une forme de spear phishing qui cible spécifiquement des personnes à haut profil (CEO, CFO...)."
+  },
+  {
+    "id": "mod09-3",
+    "module": "mod09",
+    "front": "Différence entre Smishing et Vishing ?",
+    "back": "Smishing = phishing par SMS. Vishing = phishing par appel téléphonique (Voice Phishing)."
+  },
+  {
+    "id": "mod09-4",
+    "module": "mod09",
+    "front": "Qu'est-ce que le Pharming ?",
+    "back": "Rediriger un utilisateur d'un site légitime vers un faux site, généralement via DNS poisoning ou malware, pour voler des identifiants."
+  },
+  {
+    "id": "mod09-5",
+    "module": "mod09",
+    "front": "Qu'est-ce que le Clone Phishing ?",
+    "back": "Cloner un email légitime déjà reçu/fait confiance, en remplaçant sa pièce jointe ou son lien par un élément malveillant."
+  },
+  {
+    "id": "mod09-6",
+    "module": "mod09",
+    "front": "Qu'est-ce que le Pretexting ?",
+    "back": "Créer un faux scénario/prétexte pour obtenir une information (ex : se faire passer pour le support IT)."
+  },
+  {
+    "id": "mod09-7",
+    "module": "mod09",
+    "front": "Qu'est-ce que le Baiting en social engineering ?",
+    "back": "Laisser un appât (ex : clé USB infectée, lien alléchant) pour inciter la victime à compromettre elle-même son système."
+  },
+  {
+    "id": "mod09-8",
+    "module": "mod09",
+    "front": "Qu'est-ce que le Tailgating ?",
+    "back": "Suivre une personne autorisée dans une zone restreinte sans passer par l'authentification (badge)."
+  },
+  {
+    "id": "mod09-9",
+    "module": "mod09",
+    "front": "Quel outil Kali Linux permet de simuler des attaques de phishing avec 'Credential Harvesting' ?",
+    "back": "SEToolkit (Social-Engineer Toolkit)."
+  },
+  {
+    "id": "mod09-10",
+    "module": "mod09",
+    "front": "Cite un outil pour vérifier si une URL est du phishing.",
+    "back": "URLScan.io, URLVoid.com ou CheckPhish.ai."
+  },
+  {
+    "id": "mod10-1",
+    "module": "mod10",
+    "front": "Différence fondamentale entre DoS et DDoS ?",
+    "back": "DoS = attaque depuis un système unique. DDoS = attaque distribuée depuis plusieurs systèmes compromis (botnet) simultanément, plus difficile à stopper."
+  },
+  {
+    "id": "mod10-2",
+    "module": "mod10",
+    "front": "Donne un exemple d'attaque DoS 'Volume-Based'.",
+    "back": "UDP Flood, ICMP Flood (Ping Flood), ou DNS Amplification — vise à saturer toute la bande passante, mesuré en Gbps/pps."
+  },
+  {
+    "id": "mod10-3",
+    "module": "mod10",
+    "front": "Qu'est-ce qu'un SYN Flood, et dans quelle catégorie d'attaque DoS classe-t-on cette technique ?",
+    "back": "Envoi massif de paquets SYN pour épuiser la mémoire/l'état du serveur — catégorie 'Protocol Attacks' (Network Layer)."
+  },
+  {
+    "id": "mod10-4",
+    "module": "mod10",
+    "front": "Qu'est-ce que Slowloris ?",
+    "back": "Un outil d'attaque Layer 7 qui envoie des requêtes HTTP partielles et maintient de nombreuses connexions ouvertes pour épuiser le pool de connexions du serveur."
+  },
+  {
+    "id": "mod10-5",
+    "module": "mod10",
+    "front": "Qu'est-ce qu'un Smurf Attack ?",
+    "back": "Une attaque de type 'Protocol Attack' qui usurpe des requêtes ICMP vers une adresse de broadcast, amplifiant le flood vers la victime."
+  },
+  {
+    "id": "mod10-6",
+    "module": "mod10",
+    "front": "Qu'est-ce qu'une attaque 'Resource Exhaustion' de type Fork Bomb ?",
+    "back": "Création récursive de processus pour épuiser le CPU du système cible (plutôt que la bande passante)."
+  },
+  {
+    "id": "mod10-7",
+    "module": "mod10",
+    "front": "Que fait l'option --rand-source sur hping3 ?",
+    "back": "Génère des adresses IP sources aléatoires (usurpation) pour chaque paquet envoyé."
+  },
+  {
+    "id": "mod10-8",
+    "module": "mod10",
+    "front": "Qu'est-ce qu'une attaque 'Multi-Vector' DDoS ?",
+    "back": "Une attaque qui combine plusieurs types d'attaque simultanément (ex: SYN Flood + HTTP Flood) pour contourner les défenses."
+  },
+  {
+    "id": "mod10-9",
+    "module": "mod10",
+    "front": "Citez deux outils volumétriques DDoS populaires historiquement utilisés par des hacktivistes.",
+    "back": "LOIC (Low Orbit Ion Cannon) et HOIC (High Orbit Ion Cannon)."
+  },
+  {
+    "id": "mod10-10",
+    "module": "mod10",
+    "front": "Qu'est-ce que le Ping of Death ?",
+    "back": "Envoi de paquets ICMP malformés ou surdimensionnés provoquant le crash du système cible."
+  },
+  {
+    "id": "mod11-1",
+    "module": "mod11",
+    "front": "Qu'est-ce que le Session Hijacking ?",
+    "back": "Prendre le contrôle de la session active d'un utilisateur en volant ou prédisant son Session ID, pour usurper son identité sans qu'il le sache."
+  },
+  {
+    "id": "mod11-2",
+    "module": "mod11",
+    "front": "Quelles sont les 4 étapes du cycle de vie d'un session hijacking ?",
+    "back": "Target Identification, Session ID Acquisition, Session Takeover, Exploitation."
+  },
+  {
+    "id": "mod11-3",
+    "module": "mod11",
+    "front": "Qu'est-ce que le Sidejacking, et quel outil historique l'illustre ?",
+    "back": "Vol de session sur un réseau Wi-Fi non sécurisé. Illustré par Firesheep (2010), une extension de navigateur."
+  },
+  {
+    "id": "mod11-4",
+    "module": "mod11",
+    "front": "Qu'est-ce que la Session Fixation ?",
+    "back": "Une technique où l'attaquant force la victime à utiliser un Session ID connu à l'avance, puis l'utilise pour prendre le contrôle de sa session une fois authentifiée."
+  },
+  {
+    "id": "mod11-5",
+    "module": "mod11",
+    "front": "Comment récupérer un Session ID via Wireshark sur du trafic HTTP non chiffré ?",
+    "back": "Capturer le trafic, filtrer sur les requêtes HTTP POST de login, faire 'Follow TCP Stream', et repérer le cookie de session (ex: JSESSIONID) dans la réponse."
+  },
+  {
+    "id": "mod11-6",
+    "module": "mod11",
+    "front": "À quoi sert le Burp Suite Sequencer dans le contexte du session hijacking ?",
+    "back": "À tester la prévisibilité des Session IDs générés par une application (analyse d'entropie/aléa)."
+  },
+  {
+    "id": "mod11-7",
+    "module": "mod11",
+    "front": "Quelles sont les principales défenses contre le session hijacking ?",
+    "back": "HTTPS partout, HSTS, régénération du Session ID après login, cookies Secure/HttpOnly, sessions courtes, IDs longs et imprévisibles."
+  },
+  {
+    "id": "mod11-8",
+    "module": "mod11",
+    "front": "Citez 3 outils utilisés pour du session hijacking.",
+    "back": "Ettercap, Wireshark, Burp Suite (ou BeEF, Cookie Cadger, Cain & Abel)."
+  },
+  {
+    "id": "mod12-1",
+    "module": "mod12",
+    "front": "Différence entre NIDS et HIDS ?",
+    "back": "NIDS surveille le trafic réseau à un point stratégique (ex: Snort, Suricata). HIDS surveille une machine individuelle (logs, intégrité fichiers ; ex: OSSEC, Tripwire)."
+  },
+  {
+    "id": "mod12-2",
+    "module": "mod12",
+    "front": "Différence entre détection Signature-Based et Anomaly-Based ?",
+    "back": "Signature-Based compare à une base de signatures connues (précis mais aveugle au nouveau). Anomaly-Based détecte les écarts par rapport à une baseline normale (détecte le zero-day, plus de faux positifs)."
+  },
+  {
+    "id": "mod12-3",
+    "module": "mod12",
+    "front": "Qu'est-ce qu'un False Negative en IDS, et pourquoi est-ce le plus dangereux ?",
+    "back": "Une attaque réelle qui n'est PAS détectée par l'IDS — dangereux car l'attaque passe complètement inaperçue."
+  },
+  {
+    "id": "mod12-4",
+    "module": "mod12",
+    "front": "Qu'est-ce qu'un False Positive en IDS ?",
+    "back": "Une alerte levée alors qu'aucune attaque n'a réellement lieu (trafic légitime signalé à tort comme malveillant)."
+  },
+  {
+    "id": "mod12-5",
+    "module": "mod12",
+    "front": "Quelle est la principale différence entre IDS et IPS ?",
+    "back": "L'IDS surveille et alerte sans agir. L'IPS est en ligne (in-line) dans le trafic et peut bloquer automatiquement (drop de paquets, reset de connexion, blocage d'IP)."
+  },
+  {
+    "id": "mod12-6",
+    "module": "mod12",
+    "front": "Qu'est-ce qu'un Next-Generation Firewall (NGFW) ?",
+    "back": "Un firewall combinant inspection profonde des paquets (DPI), prévention d'intrusion, conscience applicative et protection anti-malware."
+  },
+  {
+    "id": "mod12-7",
+    "module": "mod12",
+    "front": "Qu'est-ce qu'un honeypot 'High-Interaction' ?",
+    "back": "Un honeypot qui émule un vrai système complet pour un engagement approfondi avec l'attaquant (par opposition au Low-Interaction qui simule des services limités)."
+  },
+  {
+    "id": "mod12-8",
+    "module": "mod12",
+    "front": "Quels sont les 4 objectifs principaux d'un honeypot ?",
+    "back": "Detection, Diversion (distraire l'attaquant des vraies cibles), Analysis (étudier son comportement/outils), Prevention (améliorer les défenses)."
+  },
+  {
+    "id": "mod12-9",
+    "module": "mod12",
+    "front": "Qu'est-ce qu'un Stateful Inspection Firewall ?",
+    "back": "Un firewall qui suit l'état des connexions actives et prend des décisions basées sur ce contexte, plus sécurisé qu'un simple filtrage de paquets."
+  },
+  {
+    "id": "mod13-1",
+    "module": "mod13",
+    "front": "Qu'est-ce que le Directory Traversal ?",
+    "back": "Une mauvaise validation des entrées permettant d'accéder à des fichiers en dehors de la racine web (ex: ../../../etc/passwd)."
+  },
+  {
+    "id": "mod13-2",
+    "module": "mod13",
+    "front": "Qu'est-ce que le 'banner grabbing' en Information Disclosure ?",
+    "back": "Récupérer des informations sur le type/version du serveur web exposées dans les en-têtes ou messages d'erreur (ex: Apache 2.4.6)."
+  },
+  {
+    "id": "mod13-3",
+    "module": "mod13",
+    "front": "Pourquoi les méthodes HTTP PUT/DELETE/TRACE activées sont-elles risquées ?",
+    "back": "Elles peuvent permettre l'upload de fichiers malveillants ou faciliter des attaques de type cross-site tracing."
+  },
+  {
+    "id": "mod13-4",
+    "module": "mod13",
+    "front": "Quel outil permet d'obtenir un shell distant sur un serveur Windows via WinRM ?",
+    "back": "Evil-WinRM."
+  },
+  {
+    "id": "mod13-5",
+    "module": "mod13",
+    "front": "À quoi sert CrackMapExec ?",
+    "back": "Outil de post-exploitation/pass-the-hash pour tester et se déplacer dans des environnements Windows/Active Directory."
+  },
+  {
+    "id": "mod13-6",
+    "module": "mod13",
+    "front": "Quel outil identifie les technologies utilisées par un serveur web lors du footprinting ?",
+    "back": "WhatWeb (ou HTTPRecon)."
+  },
+  {
+    "id": "mod13-7",
+    "module": "mod13",
+    "front": "Quelle directive Apache permet de masquer la version du serveur exposée dans les en-têtes ?",
+    "back": "ServerTokens Prod."
+  },
+  {
+    "id": "mod13-8",
+    "module": "mod13",
+    "front": "Citez 2 serveurs web les plus courants et un cas d'usage typique de Nginx.",
+    "back": "Apache (le plus répandu) et Nginx, souvent utilisé comme reverse proxy / load balancer léger."
+  },
+  {
+    "id": "mod14-1",
+    "module": "mod14",
+    "front": "OWASP Top 10 : que couvre la catégorie A01 ?",
+    "back": "Broken Access Control — un utilisateur peut accéder aux données d'un autre en modifiant l'URL/les paramètres."
+  },
+  {
+    "id": "mod14-2",
+    "module": "mod14",
+    "front": "OWASP Top 10 : qu'est-ce que le SSRF (A10) ?",
+    "back": "Server-Side Request Forgery — l'attaquant force le serveur à effectuer une requête vers une ressource interne normalement inaccessible depuis l'extérieur."
+  },
+  {
+    "id": "mod14-3",
+    "module": "mod14",
+    "front": "OWASP Top 10 : dans quelle catégorie classe-t-on le SQL Injection ?",
+    "back": "A03 — Injection."
+  },
+  {
+    "id": "mod14-4",
+    "module": "mod14",
+    "front": "Quelle méthode HTTP envoie des données sans les rendre visibles dans l'URL ?",
+    "back": "POST (contrairement à GET, qui les affiche dans l'URL)."
+  },
+  {
+    "id": "mod14-5",
+    "module": "mod14",
+    "front": "Comment fonctionne une attaque XSS de base ?",
+    "back": "Un attaquant injecte un script malveillant (ex: <script>alert('XSS')</script>) dans un champ non sanitisé ; le script est reflété/stocké puis exécuté dans le navigateur de la victime."
+  },
+  {
+    "id": "mod14-6",
+    "module": "mod14",
+    "front": "À quoi servent DirBuster et Gobuster ?",
+    "back": "À découvrir par force brute des répertoires et fichiers cachés sur un serveur web."
+  },
+  {
+    "id": "mod14-7",
+    "module": "mod14",
+    "front": "Que fait le BeEF Framework, et que cible-t-il précisément ?",
+    "back": "Browser Exploitation Framework : cible le navigateur de la victime (pas l'OS/serveur) via un script hook.js injecté, permettant à l'attaquant d'exécuter des payloads côté client."
+  },
+  {
+    "id": "mod14-8",
+    "module": "mod14",
+    "front": "Qu'est-ce que DVWA ?",
+    "back": "Damn Vulnerable Web Application — application volontairement vulnérable utilisée pour s'entraîner légalement (brute force, SQLi, XSS...)."
+  },
+  {
+    "id": "mod14-9",
+    "module": "mod14",
+    "front": "À quoi servent les CSRF Tokens ?",
+    "back": "À empêcher qu'une requête non autorisée (forgée par un tiers) soit exécutée au nom de l'utilisateur authentifié."
+  },
+  {
+    "id": "mod15-1",
+    "module": "mod15",
+    "front": "Qu'est-ce que le SQL Injection ?",
+    "back": "Une vulnérabilité qui permet à un attaquant d'interférer avec les requêtes SQL d'une application pour voir/modifier des données ou contourner l'authentification."
+  },
+  {
+    "id": "mod15-2",
+    "module": "mod15",
+    "front": "Que fait le payload ' OR 1=1 -- ?",
+    "back": "Rend la condition WHERE toujours vraie, ce qui peut contourner un login ou faire retourner toutes les lignes d'une requête."
+  },
+  {
+    "id": "mod15-3",
+    "module": "mod15",
+    "front": "Qu'est-ce qu'une injection Union-Based ?",
+    "back": "Utilise UNION SELECT pour combiner le résultat de la requête originale avec des données d'une autre table choisie par l'attaquant (ex: extraire username/password)."
+  },
+  {
+    "id": "mod15-4",
+    "module": "mod15",
+    "front": "Différence entre Boolean-Based Blind et Time-Based Blind SQLi ?",
+    "back": "Boolean-Based déduit l'info en observant un changement de comportement de la page (vrai/faux). Time-Based déduit l'info en mesurant un délai de réponse provoqué (ex: SLEEP(5))."
+  },
+  {
+    "id": "mod15-5",
+    "module": "mod15",
+    "front": "À quoi sert le test ' ORDER BY N -- lors d'une injection SQL ?",
+    "back": "À déterminer le nombre de colonnes d'une table (une erreur apparaît si N dépasse le nombre réel de colonnes) — étape préalable à une injection UNION."
+  },
+  {
+    "id": "mod15-6",
+    "module": "mod15",
+    "front": "Quel outil GUI automatisé permet de détecter et exploiter une injection SQL, avec bypass de login admin ?",
+    "back": "Havij."
+  },
+  {
+    "id": "mod15-7",
+    "module": "mod15",
+    "front": "Que fait la commande sqlmap -u <url> --dbs ?",
+    "back": "Teste l'URL cible pour une injection SQL et liste les bases de données disponibles sur le serveur."
+  },
+  {
+    "id": "mod15-8",
+    "module": "mod15",
+    "front": "Que fait l'option --random-agent sur SQLMap ?",
+    "back": "Utilise un User-Agent de navigateur aléatoire pour tenter de contourner la détection/le filtrage."
+  },
+  {
+    "id": "mod15-9",
+    "module": "mod15",
+    "front": "Quelle est la meilleure défense technique contre le SQL Injection ?",
+    "back": "Les requêtes préparées / paramétrées (prepared statements), combinées à une validation stricte des entrées et au principe du moindre privilège sur le compte DB."
+  },
+  {
+    "id": "mod17-1",
+    "module": "mod17",
+    "front": "Sur quel port TCP l'ADB (Android Debug Bridge) écoute-t-il typiquement, exploité en 'Wireless ADB Exploitation' ?",
+    "back": "Port 5555."
+  },
+  {
+    "id": "mod17-2",
+    "module": "mod17",
+    "front": "Qu'est-ce que l'ADB-Toolkit ?",
+    "back": "Un ensemble d'outils qui automatisent les commandes ADB pour interagir avec un device Android (fichiers, APK, logs, contrôle)."
+  },
+  {
+    "id": "mod17-3",
+    "module": "mod17",
+    "front": "Qu'est-ce que le 'Real-Time Log Hijacking' sur Android ?",
+    "back": "Capturer les logs du device (via logcat) pour voler des informations sensibles comme des identifiants ou tokens de session."
+  },
+  {
+    "id": "mod17-4",
+    "module": "mod17",
+    "front": "Différence entre Physical Access Attack et Wireless ADB Exploitation ?",
+    "back": "Physical = connexion USB directe pour prendre le contrôle. Wireless = exploitation à distance quand le port ADB (5555) est exposé sur le réseau."
+  },
+  {
+    "id": "mod17-5",
+    "module": "mod17",
+    "front": "Qu'est-ce qu'un RAT Android comme CypherRAT/CraxsRAT permet à un attaquant ?",
+    "back": "Un accès distant au device de la victime après installation d'un APK piégé : gestion de fichiers, liste des apps, contrôle via un listener."
+  },
+  {
+    "id": "mod17-6",
+    "module": "mod17",
+    "front": "Citez un outil d'analyse statique en ligne pour un fichier APK suspect.",
+    "back": "VirusTotal, Sisik Online APK Analyzer, Android APK Decompiler ou Koodous."
+  },
+  {
+    "id": "mod17-7",
+    "module": "mod17",
+    "front": "Qu'est-ce que l'App Tampering dans le contexte ADB ?",
+    "back": "Désinstaller une application légitime et installer une version backdoorée à sa place via ADB."
+  },
+  {
+    "id": "mod18-1",
+    "module": "mod18",
+    "front": "Quelles sont les 4 couches de l'architecture IoT ?",
+    "back": "Perception Layer, Network Layer, Processing Layer, Application Layer."
+  },
+  {
+    "id": "mod18-2",
+    "module": "mod18",
+    "front": "Quel protocole de messagerie léger est le plus utilisé en IoT ?",
+    "back": "MQTT (Message Queuing Telemetry Transport)."
+  },
+  {
+    "id": "mod18-3",
+    "module": "mod18",
+    "front": "Quelle est la vulnérabilité IoT OWASP n°1 ?",
+    "back": "Weak, Guessable, or Hardcoded Passwords."
+  },
+  {
+    "id": "mod18-4",
+    "module": "mod18",
+    "front": "Qu'est-ce qu'un PLC ?",
+    "back": "Programmable Logic Controller — le 'cerveau' d'un système industriel, exécute la logique de contrôle en temps réel."
+  },
+  {
+    "id": "mod18-5",
+    "module": "mod18",
+    "front": "Qu'est-ce qu'un RTU ?",
+    "back": "Remote Terminal Unit — envoie les données capteurs au système SCADA sur de longues distances."
+  },
+  {
+    "id": "mod18-6",
+    "module": "mod18",
+    "front": "Différence entre SCADA et DCS ?",
+    "back": "SCADA supervise et contrôle des devices OT répartis sur plusieurs sites/emplacements. DCS est un système de contrôle avec traitement local, souvent utilisé dans les raffineries."
+  },
+  {
+    "id": "mod18-7",
+    "module": "mod18",
+    "front": "Quelle est la priorité principale en OT, contrairement à l'IT ?",
+    "back": "La haute disponibilité (continuité du processus physique) est critique en OT, alors qu'en IT la confidentialité est prioritaire."
+  },
+  {
+    "id": "mod18-8",
+    "module": "mod18",
+    "front": "Citez 2 protocoles couramment utilisés en environnement OT/industriel.",
+    "back": "MODBUS, DNP3 (ou PROFIBUS, OPC-UA, BACnet, EtherCAT)."
+  },
+  {
+    "id": "mod18-9",
+    "module": "mod18",
+    "front": "Quel moteur de recherche permet de trouver des webcams ou panneaux SCADA exposés sur Internet ?",
+    "back": "Shodan (ou ZoomEye, FOFA)."
+  },
+  {
+    "id": "mod18-10",
+    "module": "mod18",
+    "front": "À quoi sert un Industrial Gateway en environnement OT ?",
+    "back": "À convertir des protocoles OT en protocoles compatibles IT (ex: MODBUS vers MQTT)."
+  },
+  {
+    "id": "mod19-1",
+    "module": "mod19",
+    "front": "Différence entre IaaS, PaaS et SaaS ?",
+    "back": "IaaS = infrastructure brute (VMs, stockage, réseau — ex: AWS EC2). PaaS = plateforme pour développer/déployer des apps (ex: Heroku). SaaS = logiciel prêt à l'emploi (ex: Gmail, Zoom)."
+  },
+  {
+    "id": "mod19-2",
+    "module": "mod19",
+    "front": "Qu'est-ce que le FaaS ?",
+    "back": "Function as a Service — exécution serverless de fonctions à la demande, sans gestion de serveur (ex: AWS Lambda, Azure Functions)."
+  },
+  {
+    "id": "mod19-3",
+    "module": "mod19",
+    "front": "Différence entre Public Cloud et Hybrid Cloud ?",
+    "back": "Public Cloud = partagé entre utilisateurs via Internet. Hybrid Cloud = combinaison d'environnements public et privé (ex: données sensibles en privé, reste en public)."
+  },
+  {
+    "id": "mod19-4",
+    "module": "mod19",
+    "front": "Qu'est-ce qu'un Community Cloud ?",
+    "back": "Un cloud partagé entre plusieurs organisations ayant des objectifs communs (ex: hôpitaux partageant un cloud santé sécurisé)."
+  },
+  {
+    "id": "mod19-5",
+    "module": "mod19",
+    "front": "Quel est le risque cloud OWASP n°1 (CNAS-2023) ?",
+    "back": "Cloud Provider Misconfiguration — stockage, IAM ou réseau mal configuré menant à des fuites de données."
+  },
+  {
+    "id": "mod19-6",
+    "module": "mod19",
+    "front": "Qu'est-ce qu'un 'Misconfigured Cloud Storage' comme menace cloud ?",
+    "back": "Des buckets S3 publics, bases de données ouvertes ou firewalls mal configurés menant à une exposition de données — l'une des menaces cloud les plus fréquentes."
+  },
+  {
+    "id": "mod19-7",
+    "module": "mod19",
+    "front": "À quoi sert Kubernetes ?",
+    "back": "Orchestrer, déployer et faire évoluer (scaling) des conteneurs Docker à grande échelle."
+  },
+  {
+    "id": "mod19-8",
+    "module": "mod19",
+    "front": "À quoi sert l'outil LazyS3 ?",
+    "back": "À énumérer des buckets Amazon S3 mal configurés ou publiquement accessibles."
+  },
+  {
+    "id": "mod19-9",
+    "module": "mod19",
+    "front": "À quoi sert Trivy ?",
+    "back": "Scanner les vulnérabilités des images de conteneurs (et environnements cloud)."
+  },
+  {
+    "id": "mod19-10",
+    "module": "mod19",
+    "front": "Qu'est-ce qu'un container, en une phrase simple ?",
+    "back": "Un package exécutable léger et portable qui embarque code + runtime + librairies + dépendances pour tourner de façon identique partout."
+  },
+  {
+    "id": "mod20-1",
+    "module": "mod20",
+    "front": "Quels sont les 5 objectifs de la cryptographie (C.I.A.A.N.) ?",
+    "back": "Confidentiality, Integrity, Authentication, Authorization, Non-Repudiation."
+  },
+  {
+    "id": "mod20-2",
+    "module": "mod20",
+    "front": "Différence entre chiffrement symétrique et asymétrique ?",
+    "back": "Symétrique = même clé pour chiffrer/déchiffrer (rapide, ex: AES). Asymétrique = clé publique pour chiffrer, clé privée pour déchiffrer (plus sécurisé mais plus lent, ex: RSA)."
+  },
+  {
+    "id": "mod20-3",
+    "module": "mod20",
+    "front": "Citez 3 algorithmes de hash, et lesquels sont obsolètes.",
+    "back": "MD5 (obsolète, vulnérable aux collisions), SHA-1 (obsolète), SHA-256/SHA-512/SHA-3 (recommandés)."
+  },
+  {
+    "id": "mod20-4",
+    "module": "mod20",
+    "front": "Qu'est-ce qu'une Certificate Authority (CA) dans une PKI ?",
+    "back": "L'entité qui émet et signe les certificats numériques (ex: DigiCert, Let's Encrypt)."
+  },
+  {
+    "id": "mod20-5",
+    "module": "mod20",
+    "front": "Qu'est-ce qu'un CSR (Certificate Signing Request) ?",
+    "back": "La demande soumise par un utilisateur/serveur à une CA pour obtenir un certificat, contenant sa clé publique et ses informations d'identité."
+  },
+  {
+    "id": "mod20-6",
+    "module": "mod20",
+    "front": "Différence entre un certificat signé par une CA et un certificat auto-signé ?",
+    "back": "CA-signé = émis par une autorité de confiance reconnue par défaut par navigateurs/OS. Auto-signé = signé par son propre propriétaire, non fiable par défaut (usage : tests/labs internes)."
+  },
+  {
+    "id": "mod20-7",
+    "module": "mod20",
+    "front": "À quoi sert le CRL (Certificate Revocation List) ?",
+    "back": "À lister les certificats qui ont été révoqués avant leur date d'expiration."
+  },
+  {
+    "id": "mod20-8",
+    "module": "mod20",
+    "front": "Qu'est-ce qu'une Side-Channel Attack en cryptanalyse ?",
+    "back": "Une attaque qui exploite des fuites physiques (temps d'exécution, consommation électrique...) plutôt qu'une faille mathématique de l'algorithme."
+  },
+  {
+    "id": "mod20-9",
+    "module": "mod20",
+    "front": "Qu'est-ce que la Frequency Analysis en cryptanalyse ?",
+    "back": "Une méthode qui analyse la fréquence d'apparition des caractères/motifs pour casser un chiffrement (efficace sur les chiffrements classiques de substitution)."
+  },
+  {
+    "id": "mod20-10",
+    "module": "mod20",
+    "front": "Dans une connexion HTTPS/TLS, quel type de chiffrement est utilisé en premier, puis lequel prend le relais pour la performance ?",
+    "back": "Asymétrique d'abord (échange de clé sécurisé), puis symétrique pour la suite de la communication (plus rapide)."
+  }
+]
