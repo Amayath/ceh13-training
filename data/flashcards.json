@@ -1186,5 +1186,101 @@
     "module": "mod20",
     "front": "Dans une connexion HTTPS/TLS, quel type de chiffrement est utilisé en premier, puis lequel prend le relais pour la performance ?",
     "back": "Asymétrique d'abord (échange de clé sécurisé), puis symétrique pour la suite de la communication (plus rapide)."
+  },
+  {
+    "id": "mod16-1",
+    "module": "mod16",
+    "front": "Sur quel algorithme de chiffrement repose WEP, et quelle est sa faiblesse principale ?",
+    "back": "RC4 avec un IV de seulement 24 bits, trop court et souvent réutilisé — ce qui le rend cassable par capture passive du trafic."
+  },
+  {
+    "id": "mod16-2",
+    "module": "mod16",
+    "front": "Que remplace TKIP par rapport à WEP, et dans quel standard est-il utilisé ?",
+    "back": "TKIP est utilisé par WPA : il corrige les failles de WEP via des clés par paquet, un IV étendu et un contrôle d'intégrité (MIC avec l'algorithme Michael)."
+  },
+  {
+    "id": "mod16-3",
+    "module": "mod16",
+    "front": "Quel algorithme de chiffrement et quel protocole WPA2 utilise-t-il (remplaçant TKIP) ?",
+    "back": "AES, via le protocole CCMP (Counter Mode CBC-MAC Protocol)."
+  },
+  {
+    "id": "mod16-4",
+    "module": "mod16",
+    "front": "Différence entre WPA2-Personal et WPA2-Enterprise ?",
+    "back": "Personal utilise une clé pré-partagée (PSK) commune. Enterprise utilise une authentification centralisée via EAP/RADIUS avec des identifiants individuels."
+  },
+  {
+    "id": "mod16-5",
+    "module": "mod16",
+    "front": "Qu'est-ce que l'attaque KRACK ?",
+    "back": "Key Reinstallation Attack : exploite une faille du four-way handshake de WPA2 en forçant la réinstallation d'une clé déjà utilisée, permettant de déchiffrer/manipuler le trafic."
+  },
+  {
+    "id": "mod16-6",
+    "module": "mod16",
+    "front": "Quels sont les mécanismes de chiffrement/authentification de WPA3 ?",
+    "back": "GCMP-256 pour le chiffrement et HMAC-SHA-384 pour l'authentification, avec SAE (Dragonfly) en remplacement du PSK classique."
+  },
+  {
+    "id": "mod16-7",
+    "module": "mod16",
+    "front": "Quelles sont les 5 catégories de menaces sans fil selon la classification CEH ?",
+    "back": "Access Control Attacks, Integrity Attacks, Confidentiality Attacks, Availability Attacks, Authentication Attacks."
+  },
+  {
+    "id": "mod16-8",
+    "module": "mod16",
+    "front": "Qu'est-ce qu'un Evil Twin ?",
+    "back": "Un AP malveillant qui diffuse le même SSID qu'un AP légitime pour tromper les utilisateurs et intercepter leur trafic/identifiants."
+  },
+  {
+    "id": "mod16-9",
+    "module": "mod16",
+    "front": "Qu'est-ce qu'un Rogue AP ?",
+    "back": "Un point d'accès non autorisé installé sur le réseau sans passer par l'administrateur, offrant un accès dérobé (backdoor) au réseau."
+  },
+  {
+    "id": "mod16-10",
+    "module": "mod16",
+    "front": "Différence entre WarDriving et WarChalking ?",
+    "back": "WarDriving = se déplacer en voiture avec un outil de découverte Wi-Fi pour cartographier les réseaux ouverts. WarChalking = dessiner des symboles dans l'espace public pour signaler un Wi-Fi ouvert repéré."
+  },
+  {
+    "id": "mod16-11",
+    "module": "mod16",
+    "front": "Quelles sont les 5 étapes de la Wireless Hacking Methodology ?",
+    "back": "Wi-Fi Discovery, Wireless Traffic Analysis, Launch of Wireless Attacks, Wi-Fi Encryption Cracking, Wi-Fi Network Compromising."
+  },
+  {
+    "id": "mod16-12",
+    "module": "mod16",
+    "front": "Différence entre footprinting Wi-Fi passif et actif ?",
+    "back": "Passif = l'attaquant sniffe les ondes sans interagir (découvre AP/SSID). Actif = l'attaquant envoie des probe requests et attend une réponse de l'AP."
+  },
+  {
+    "id": "mod16-13",
+    "module": "mod16",
+    "front": "Quel outil de la suite Aircrack-ng sert spécifiquement à capturer le handshake WPA/WPA2 en agissant comme un faux AP ?",
+    "back": "airbase-ng."
+  },
+  {
+    "id": "mod16-14",
+    "module": "mod16",
+    "front": "Quel outil de la suite Aircrack-ng est utilisé pour la désauthentification ciblée d'utilisateurs ?",
+    "back": "airdrop-ng."
+  },
+  {
+    "id": "mod16-15",
+    "module": "mod16",
+    "front": "Qu'est-ce qu'un WIPS ?",
+    "back": "Wireless Intrusion Prevention System : surveille en continu le spectre radio pour détecter les rogue APs et menaces sans fil, et peut appliquer automatiquement des contre-mesures."
+  },
+  {
+    "id": "mod16-16",
+    "module": "mod16",
+    "front": "Quelle est la meilleure pratique de chiffrement recommandée aujourd'hui pour sécuriser un réseau Wi-Fi ?",
+    "back": "WPA3 si disponible ; sinon WPA2 avec AES au minimum (jamais WEP ni TKIP seul)."
   }
 ]
