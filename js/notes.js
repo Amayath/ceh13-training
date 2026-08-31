@@ -6,6 +6,8 @@ function getParam(name) {
 }
 
 async function initNotes() {
+  await Storage.init();
+
   const [modules, notes] = await Promise.all([
     fetch("data/modules.json").then(r => r.json()),
     fetch("data/notes.json").then(r => r.json()),

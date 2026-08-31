@@ -1,62 +1,69 @@
 const Storage = (() => {
   const KEY = "ceh13_progress_v1";
-
-  function load() {
-    try {
-      const raw = localStorage.getItem(KEY);
-      if (!raw) return defaultState();
-      return { ...defaultState(), ...JSON.parse(raw) };
-    } catch (e) {
-      return defaultState();
-    }
-  }
+  let cachedState = null;
 
   function defaultState() {
     return {
-      quizAttempts: [],       // { date, total, correct, source }
-      questionStats: {},      // id -> { seen, correct }
+      quizAttempts: [],       // { date, total, correct, source, mode }
+      questionStats: {},      // id -> { seen, correct, lastCorrect }
       flashcardStats: {},     // id -> { known: bool, seen }
       notesRead: {},          // moduleSlug -> true
     };
   }
 
-  function save(state) {
-    localStorage.setItem(KEY, JSON.stringify(state));
+  async function init() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      cachedState = raw ? { ...defaultState(), ...JSON.parse(raw) } : defaultState();
+    } catch (e) {
+      cachedState = defaultState();
+    }
+    return cachedState;
+  }
+
+  function getState() {
+    return cachedState || defaultState();
+  }
+
+  function persist() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(cachedState));
+    } catch (e) {
+      /* storage unavailable, ignore */
+    }
   }
 
   function recordQuizAttempt(attempt) {
-    const state = load();
-    state.quizAttempts.push(attempt);
-    save(state);
+    cachedState.quizAttempts.push(attempt);
+    persist();
   }
 
   function recordQuestionResult(id, correct) {
-    const state = load();
-    const s = state.questionStats[id] || { seen: 0, correct: 0 };
+    const s = cachedState.questionStats[id] || { seen: 0, correct: 0 };
     s.seen += 1;
     if (correct) s.correct += 1;
-    state.questionStats[id] = s;
-    save(state);
+    s.lastCorrect = correct;
+    cachedState.questionStats[id] = s;
+    persist();
   }
 
   function recordFlashcard(id, known) {
-    const state = load();
-    const s = state.flashcardStats[id] || { seen: 0, known: false };
+    const s = cachedState.flashcardStats[id] || { seen: 0, known: false };
     s.seen += 1;
     s.known = known;
-    state.flashcardStats[id] = s;
-    save(state);
+    cachedState.flashcardStats[id] = s;
+    persist();
   }
 
   function markNotesRead(slug) {
-    const state = load();
-    state.notesRead[slug] = true;
-    save(state);
+    cachedState.notesRead[slug] = true;
+    persist();
   }
 
   function reset() {
-    save(defaultState());
+    cachedState = defaultState();
+    persist();
   }
 
-  return { load, save, recordQuizAttempt, recordQuestionResult, recordFlashcard, markNotesRead, reset };
+  return { init, getState, recordQuizAttempt, recordQuestionResult, recordFlashcard, markNotesRead, reset };
 })();

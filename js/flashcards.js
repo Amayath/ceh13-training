@@ -5,6 +5,8 @@ let cardIndex = 0;
 let flipped = false;
 
 async function initFlashcards() {
+  await Storage.init();
+
   const [cards, modules] = await Promise.all([
     fetch("data/flashcards.json").then(r => r.json()),
     fetch("data/modules.json").then(r => r.json()),
@@ -35,7 +37,7 @@ async function initFlashcards() {
 function buildDeck() {
   const moduleFilter = document.getElementById("module-select").value;
   const unknownOnly = document.getElementById("unknown-only-check").checked;
-  const state = Storage.load();
+  const state = Storage.getState();
 
   deck = ALL_CARDS.filter(c => moduleFilter === "all" || c.module === moduleFilter);
   if (unknownOnly) {
@@ -59,7 +61,7 @@ function buildDeck() {
 function renderCard() {
   flipped = false;
   const card = deck[cardIndex];
-  const state = Storage.load();
+  const state = Storage.getState();
   const stat = state.flashcardStats[card.id];
   const knownTag = stat && stat.known ? " · connue" : "";
   document.getElementById("fc-progress").textContent =
