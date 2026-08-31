@@ -6,6 +6,8 @@ function getParam(name) {
 }
 
 async function initNotes() {
+  const session = await requireSession();
+  if (!session) return;
   await Storage.init();
 
   const [modules, notes] = await Promise.all([

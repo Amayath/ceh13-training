@@ -5,6 +5,8 @@ let cardIndex = 0;
 let flipped = false;
 
 async function initFlashcards() {
+  const session = await requireSession();
+  if (!session) return;
   await Storage.init();
 
   const [cards, modules] = await Promise.all([

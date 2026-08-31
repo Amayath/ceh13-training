@@ -11,12 +11,40 @@ const Storage = (() => {
     };
   }
 
-  async function init() {
+  function loadLocal() {
     try {
       const raw = localStorage.getItem(KEY);
-      cachedState = raw ? { ...defaultState(), ...JSON.parse(raw) } : defaultState();
+      return raw ? { ...defaultState(), ...JSON.parse(raw) } : defaultState();
     } catch (e) {
-      cachedState = defaultState();
+      return defaultState();
+    }
+  }
+
+  function saveLocal() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(cachedState));
+    } catch (e) {
+      /* storage unavailable, ignore */
+    }
+  }
+
+  async function init() {
+    const local = loadLocal();
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) {
+      cachedState = local;
+      return cachedState;
+    }
+
+    try {
+      const { data, error } = await sbClient
+        .from("user_progress")
+        .select("data")
+        .eq("user_id", session.user.id)
+        .maybeSingle();
+      cachedState = !error && data && data.data ? { ...defaultState(), ...data.data } : local;
+    } catch (e) {
+      cachedState = local;
     }
     return cachedState;
   }
@@ -25,12 +53,19 @@ const Storage = (() => {
     return cachedState || defaultState();
   }
 
+  async function persistRemote() {
+    const { data: { session } } = await sbClient.auth.getSession();
+    if (!session) return;
+    await sbClient.from("user_progress").upsert({
+      user_id: session.user.id,
+      data: cachedState,
+      updated_at: new Date().toISOString(),
+    });
+  }
+
   function persist() {
-    try {
-      localStorage.setItem(KEY, JSON.stringify(cachedState));
-    } catch (e) {
-      /* storage unavailable, ignore */
-    }
+    saveLocal();
+    persistRemote();
   }
 
   function recordQuizAttempt(attempt) {

@@ -9,12 +9,18 @@
 <body>
 <div class="topbar">
   <div class="brand">CEH13<span>_trainer</span></div>
-  <nav>
-    <a href="index.html">Dashboard</a>
-    <a href="quiz.html">Quiz</a>
-    <a href="flashcards.html">Flashcards</a>
-    <a href="notes.html" class="active">Fiches de cours</a>
-  </nav>
+  <div class="topbar-right">
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="notes.html" class="active">Fiches de cours</a>
+    </nav>
+    <div class="user-box">
+      <span id="user-email"></span>
+      <button id="logout-btn" class="btn small secondary">Déconnexion</button>
+    </div>
+  </div>
 </div>
 
 <div class="container">
@@ -27,6 +33,9 @@
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/auth.js"></script>
 <script src="js/storage.js"></script>
 <script src="js/notes.js"></script>
 </body>

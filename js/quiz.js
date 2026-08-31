@@ -12,6 +12,8 @@ const EXAM_QUESTION_COUNT = 125;
 const EXAM_DURATION_SECONDS = 4 * 60 * 60;
 
 async function initQuiz() {
+  const session = await requireSession();
+  if (!session) return;
   await Storage.init();
 
   ALL_QUESTIONS = await fetch("data/questions.json").then(r => r.json());
