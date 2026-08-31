@@ -65,7 +65,7 @@ const Storage = (() => {
 
   function persist() {
     saveLocal();
-    persistRemote();
+    return persistRemote();
   }
 
   function recordQuizAttempt(attempt) {
@@ -95,9 +95,9 @@ const Storage = (() => {
     persist();
   }
 
-  function reset() {
+  async function reset() {
     cachedState = defaultState();
-    persist();
+    await persist();
   }
 
   return { init, getState, recordQuizAttempt, recordQuestionResult, recordFlashcard, markNotesRead, reset };

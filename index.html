@@ -24,8 +24,13 @@
 </div>
 
 <div class="container">
-  <h1>Prépa CEH v13</h1>
-  <p class="subtitle">Suis ta progression sur les 20 modules du programme et entraîne-toi avec plus de 500 questions.</p>
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+    <div>
+      <h1>Prépa CEH v13</h1>
+      <p class="subtitle">Suis ta progression sur les 20 modules du programme et entraîne-toi avec plus de 500 questions.</p>
+    </div>
+    <button class="btn secondary small" id="reset-btn">Réinitialiser ma progression</button>
+  </div>
 
   <div class="grid" id="stats-grid" style="margin-bottom: 36px;"></div>
 
@@ -47,6 +52,12 @@ async function main() {
   const session = await requireSession();
   if (!session) return;
   await Storage.init();
+
+  document.getElementById("reset-btn").addEventListener("click", async () => {
+    if (!confirm("Réinitialiser toute ta progression (quiz, flashcards, fiches consultées) ? Cette action est irréversible.")) return;
+    await Storage.reset();
+    location.reload();
+  });
 
   const [modules, questions] = await Promise.all([
     fetch("data/modules.json").then(r => r.json()),
