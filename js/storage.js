@@ -78,6 +78,7 @@ const Storage = (() => {
     s.seen += 1;
     if (correct) s.correct += 1;
     s.lastCorrect = correct;
+    s.lastSeenAt = Date.now();
     cachedState.questionStats[id] = s;
     persist();
   }

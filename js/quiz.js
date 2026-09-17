@@ -5,7 +5,8 @@ let quizIndex = 0;
 let quizScore = 0;
 let quizAnswered = false;
 let quizMode = "practice"; // "practice" | "exam" | "exam-short"
-let userAnswers = [];      // exam modes: index per question, or null if unanswered
+let userAnswers = [];      // exam modes: original option index per question, or null if unanswered
+let currentOptionOrder = []; // displayed-position -> original option index, for the current question
 let examTimerInterval = null;
 let examEndTime = null;
 
@@ -88,12 +89,24 @@ function shuffle(arr) {
   return a;
 }
 
+// Selects `count` questions from `pool`, favoring ones not seen recently so repeated
+// quizzes on a small pool don't keep serving the exact same questions every time.
+function pickQuestions(pool, count, doShuffle) {
+  const stats = Storage.getState().questionStats;
+  let candidates = doShuffle ? shuffle(pool) : [...pool];
+  candidates = candidates
+    .map((q, i) => ({ q, i, lastSeenAt: (stats[q.id] && stats[q.id].lastSeenAt) || 0 }))
+    .sort((a, b) => a.lastSeenAt - b.lastSeenAt || a.i - b.i)
+    .map(x => x.q);
+  return candidates.slice(0, Math.min(count, candidates.length));
+}
+
 function startQuiz(mode) {
   quizMode = mode;
 
   if (mode === "exam" || mode === "exam-short") {
     const cfg = EXAM_CONFIGS[mode];
-    quizQueue = shuffle(ALL_QUESTIONS).slice(0, Math.min(cfg.count, ALL_QUESTIONS.length));
+    quizQueue = shuffle(pickQuestions(ALL_QUESTIONS, cfg.count, true));
   } else {
     const module = document.getElementById("module-select").value;
     const source = document.getElementById("source-select").value;
@@ -108,8 +121,8 @@ function startQuiz(mode) {
       const ids = getMistakeIds();
       pool = pool.filter(q => ids.has(q.id));
     }
-    pool = doShuffle ? shuffle(pool) : pool;
-    quizQueue = pool.slice(0, Math.min(count, pool.length));
+    quizQueue = pickQuestions(pool, count, doShuffle);
+    if (doShuffle) quizQueue = shuffle(quizQueue);
   }
 
   quizIndex = 0;
@@ -177,34 +190,41 @@ function renderQuestion() {
   document.getElementById("q-text").textContent = q.question;
   document.getElementById("q-explanation").style.display = "none";
   document.getElementById("q-explanation").textContent = "";
+
+  // Shuffle the option order per presentation so the correct answer isn't always in the same spot.
+  currentOptionOrder = shuffle(q.options.map((_, idx) => idx));
+  const displayedSelectedIdx = isExam && userAnswers[quizIndex] !== null
+    ? currentOptionOrder.indexOf(userAnswers[quizIndex])
+    : -1;
   document.getElementById("next-btn").disabled = isExam ? userAnswers[quizIndex] === null : true;
 
   const optsWrap = document.getElementById("q-options");
   optsWrap.innerHTML = "";
-  q.options.forEach((opt, i) => {
+  currentOptionOrder.forEach((origIdx, displayIdx) => {
     const btn = document.createElement("button");
     btn.className = "option";
-    btn.textContent = opt;
-    if (isExam && userAnswers[quizIndex] === i) {
+    btn.textContent = q.options[origIdx];
+    if (displayIdx === displayedSelectedIdx) {
       btn.classList.add("selected");
     }
-    btn.addEventListener("click", () => selectAnswer(i));
+    btn.addEventListener("click", () => selectAnswer(displayIdx));
     optsWrap.appendChild(btn);
   });
 }
 
-function selectAnswer(i) {
+function selectAnswer(displayIdx) {
   const q = quizQueue[quizIndex];
+  const origIdx = currentOptionOrder[displayIdx];
   const isExam = quizMode === "exam" || quizMode === "exam-short";
 
   if (isExam) {
-    userAnswers[quizIndex] = i;
+    userAnswers[quizIndex] = origIdx;
     if (!quizAnswered) {
       quizAnswered = true;
-      Storage.recordQuestionResult(q.id, i === q.correctIndex);
+      Storage.recordQuestionResult(q.id, origIdx === q.correctIndex);
     }
     document.querySelectorAll("#q-options .option").forEach((btn, idx) => {
-      btn.classList.toggle("selected", idx === i);
+      btn.classList.toggle("selected", idx === displayIdx);
     });
     document.getElementById("next-btn").disabled = false;
     return;
@@ -212,15 +232,16 @@ function selectAnswer(i) {
 
   if (quizAnswered) return;
   quizAnswered = true;
-  const correct = i === q.correctIndex;
+  const correct = origIdx === q.correctIndex;
   if (correct) quizScore += 1;
   Storage.recordQuestionResult(q.id, correct);
 
+  const correctDisplayIdx = currentOptionOrder.indexOf(q.correctIndex);
   const buttons = document.querySelectorAll("#q-options .option");
   buttons.forEach((btn, idx) => {
     btn.disabled = true;
-    if (idx === q.correctIndex) btn.classList.add("correct");
-    else if (idx === i) btn.classList.add("incorrect");
+    if (idx === correctDisplayIdx) btn.classList.add("correct");
+    else if (idx === displayIdx) btn.classList.add("incorrect");
   });
 
   if (q.explanation) {
