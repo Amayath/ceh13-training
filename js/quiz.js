@@ -1,30 +1,62 @@
 let ALL_QUESTIONS = [];
+let MODULES = [];
 let quizQueue = [];
 let quizIndex = 0;
 let quizScore = 0;
 let quizAnswered = false;
-let quizMode = "practice"; // "practice" | "exam"
-let userAnswers = [];      // exam mode: index per question, or null if unanswered
+let quizMode = "practice"; // "practice" | "exam" | "exam-short"
+let userAnswers = [];      // exam modes: index per question, or null if unanswered
 let examTimerInterval = null;
 let examEndTime = null;
 
-const EXAM_QUESTION_COUNT = 125;
-const EXAM_DURATION_SECONDS = 4 * 60 * 60;
+const EXAM_CONFIGS = {
+  exam: { count: 125, seconds: 4 * 60 * 60, label: "Examen blanc" },
+  "exam-short": { count: 50, seconds: 60 * 60, label: "Examen court" },
+};
+
+function getParam(name) {
+  return new URLSearchParams(location.search).get(name);
+}
 
 async function initQuiz() {
   const session = await requireSession();
   if (!session) return;
   await Storage.init();
 
-  ALL_QUESTIONS = await fetch("data/questions.json").then(r => r.json());
+  const [questions, modules] = await Promise.all([
+    fetch("data/questions.json").then(r => r.json()),
+    fetch("data/modules.json").then(r => r.json()),
+  ]);
+  ALL_QUESTIONS = questions;
+  MODULES = modules;
+
   const sources = [...new Set(ALL_QUESTIONS.map(q => q.source))].sort();
-  const select = document.getElementById("source-select");
+  const sourceSelect = document.getElementById("source-select");
   sources.forEach(s => {
     const opt = document.createElement("option");
     opt.value = s;
-    opt.textContent = `${s} (${ALL_QUESTIONS.filter(q => q.source === s).length})`;
-    select.appendChild(opt);
+    const count = ALL_QUESTIONS.filter(q => q.source === s).length;
+    opt.textContent = s === "CEH v13 Dump" ? `${s} ⚠️ non vérifié (${count})` : `${s} (${count})`;
+    sourceSelect.appendChild(opt);
   });
+  sourceSelect.addEventListener("change", () => {
+    document.getElementById("dump-hint").style.display = sourceSelect.value === "CEH v13 Dump" ? "block" : "none";
+  });
+
+  const moduleSelect = document.getElementById("module-select");
+  const modulesWithQuestions = modules.filter(m => ALL_QUESTIONS.some(q => q.module === m.slug));
+  modulesWithQuestions.forEach(m => {
+    const opt = document.createElement("option");
+    opt.value = m.slug;
+    const count = ALL_QUESTIONS.filter(q => q.module === m.slug).length;
+    opt.textContent = `${String(m.id).padStart(2, "0")} — ${m.title} (${count})`;
+    moduleSelect.appendChild(opt);
+  });
+
+  const preselectModule = getParam("module");
+  if (preselectModule && modulesWithQuestions.some(m => m.slug === preselectModule)) {
+    moduleSelect.value = preselectModule;
+  }
 
   const mistakeIds = getMistakeIds();
   const mistakesCheck = document.getElementById("mistakes-check");
@@ -33,6 +65,7 @@ async function initQuiz() {
 
   document.getElementById("start-btn").addEventListener("click", () => startQuiz("practice"));
   document.getElementById("start-exam-btn").addEventListener("click", () => startQuiz("exam"));
+  document.getElementById("start-short-exam-btn").addEventListener("click", () => startQuiz("exam-short"));
   document.getElementById("next-btn").addEventListener("click", nextQuestion);
   document.getElementById("quit-btn").addEventListener("click", () => {
     stopExamTimer();
@@ -58,15 +91,19 @@ function shuffle(arr) {
 function startQuiz(mode) {
   quizMode = mode;
 
-  if (mode === "exam") {
-    quizQueue = shuffle(ALL_QUESTIONS).slice(0, Math.min(EXAM_QUESTION_COUNT, ALL_QUESTIONS.length));
+  if (mode === "exam" || mode === "exam-short") {
+    const cfg = EXAM_CONFIGS[mode];
+    quizQueue = shuffle(ALL_QUESTIONS).slice(0, Math.min(cfg.count, ALL_QUESTIONS.length));
   } else {
+    const module = document.getElementById("module-select").value;
     const source = document.getElementById("source-select").value;
     const count = parseInt(document.getElementById("count-input").value, 10) || 20;
     const doShuffle = document.getElementById("shuffle-check").checked;
     const mistakesOnly = document.getElementById("mistakes-check").checked;
 
-    let pool = source === "all" ? ALL_QUESTIONS : ALL_QUESTIONS.filter(q => q.source === source);
+    let pool = ALL_QUESTIONS;
+    if (module !== "all") pool = pool.filter(q => q.module === module);
+    if (source !== "all") pool = pool.filter(q => q.source === source);
     if (mistakesOnly) {
       const ids = getMistakeIds();
       pool = pool.filter(q => ids.has(q.id));
@@ -85,18 +122,25 @@ function startQuiz(mode) {
   document.getElementById("quiz-panel").style.display = "block";
 
   const timerEl = document.getElementById("exam-timer");
-  if (mode === "exam") {
+  if (mode === "exam" || mode === "exam-short") {
     timerEl.style.display = "block";
-    startExamTimer();
+    startExamTimer(EXAM_CONFIGS[mode].seconds);
   } else {
     timerEl.style.display = "none";
+  }
+
+  if (quizQueue.length === 0) {
+    document.getElementById("q-text").textContent = "Aucune question ne correspond à cette sélection.";
+    document.getElementById("q-options").innerHTML = "";
+    document.getElementById("next-btn").disabled = true;
+    return;
   }
 
   renderQuestion();
 }
 
-function startExamTimer() {
-  examEndTime = Date.now() + EXAM_DURATION_SECONDS * 1000;
+function startExamTimer(seconds) {
+  examEndTime = Date.now() + seconds * 1000;
   updateExamTimer();
   examTimerInterval = setInterval(updateExamTimer, 1000);
 }
@@ -125,14 +169,15 @@ function updateExamTimer() {
 function renderQuestion() {
   quizAnswered = false;
   const q = quizQueue[quizIndex];
-  const progressLabel = quizMode === "exam" ? "Examen blanc" : "Question";
+  const isExam = quizMode === "exam" || quizMode === "exam-short";
+  const progressLabel = isExam ? EXAM_CONFIGS[quizMode].label : "Question";
   document.getElementById("quiz-progress").textContent =
-    `${progressLabel} ${quizIndex + 1} / ${quizQueue.length}${quizMode === "practice" ? " — Score: " + quizScore : ""}`;
-  document.getElementById("q-source").textContent = q.source;
+    `${progressLabel} ${quizIndex + 1} / ${quizQueue.length}${!isExam ? " — Score: " + quizScore : ""}`;
+  document.getElementById("q-source").textContent = q.source + (q.source === "CEH v13 Dump" ? " ⚠️" : "");
   document.getElementById("q-text").textContent = q.question;
   document.getElementById("q-explanation").style.display = "none";
   document.getElementById("q-explanation").textContent = "";
-  document.getElementById("next-btn").disabled = quizMode === "exam" ? userAnswers[quizIndex] === null : true;
+  document.getElementById("next-btn").disabled = isExam ? userAnswers[quizIndex] === null : true;
 
   const optsWrap = document.getElementById("q-options");
   optsWrap.innerHTML = "";
@@ -140,7 +185,7 @@ function renderQuestion() {
     const btn = document.createElement("button");
     btn.className = "option";
     btn.textContent = opt;
-    if (quizMode === "exam" && userAnswers[quizIndex] === i) {
+    if (isExam && userAnswers[quizIndex] === i) {
       btn.classList.add("selected");
     }
     btn.addEventListener("click", () => selectAnswer(i));
@@ -150,8 +195,9 @@ function renderQuestion() {
 
 function selectAnswer(i) {
   const q = quizQueue[quizIndex];
+  const isExam = quizMode === "exam" || quizMode === "exam-short";
 
-  if (quizMode === "exam") {
+  if (isExam) {
     userAnswers[quizIndex] = i;
     if (!quizAnswered) {
       quizAnswered = true;
@@ -202,13 +248,14 @@ function finishQuiz() {
   document.getElementById("quiz-panel").style.display = "none";
   document.getElementById("result-panel").style.display = "block";
 
+  const isExam = quizMode === "exam" || quizMode === "exam-short";
   let finalScore = quizScore;
-  if (quizMode === "exam") {
+  if (isExam) {
     finalScore = quizQueue.reduce((acc, q, idx) => acc + (userAnswers[idx] === q.correctIndex ? 1 : 0), 0);
   }
 
-  const pct = Math.round((finalScore / quizQueue.length) * 100);
-  const passLabel = quizMode === "exam" ? (pct >= 70 ? " — Admissible (seuil indicatif 70%)" : " — En dessous du seuil indicatif (70%)") : "";
+  const pct = quizQueue.length ? Math.round((finalScore / quizQueue.length) * 100) : 0;
+  const passLabel = isExam ? (pct >= 70 ? " — Admissible (seuil indicatif 70%)" : " — En dessous du seuil indicatif (70%)") : "";
   document.getElementById("result-summary").textContent =
     `${finalScore} / ${quizQueue.length} bonnes réponses (${pct}%)${passLabel}`;
 
@@ -219,9 +266,15 @@ function finishQuiz() {
     mode: quizMode,
   });
 
-  if (quizMode === "exam") {
+  if (isExam) {
     renderReview();
   }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
 }
 
 function renderReview() {
@@ -232,10 +285,10 @@ function renderReview() {
     const selectedText = selected === null ? "(pas de réponse)" : q.options[selected];
     return `
       <div class="review-item ${isCorrect ? "correct" : "incorrect"}">
-        <div class="review-q">${idx + 1}. ${q.question}</div>
-        <div class="review-a">Ta réponse : ${selectedText}</div>
-        ${!isCorrect ? `<div class="review-correct">Bonne réponse : ${q.options[q.correctIndex]}</div>` : ""}
-        ${q.explanation ? `<div class="explanation">${q.explanation}</div>` : ""}
+        <div class="review-q">${idx + 1}. ${escapeHtml(q.question)}</div>
+        <div class="review-a">Ta réponse : ${escapeHtml(selectedText)}</div>
+        ${!isCorrect ? `<div class="review-correct">Bonne réponse : ${escapeHtml(q.options[q.correctIndex])}</div>` : ""}
+        ${q.explanation ? `<div class="explanation">${escapeHtml(q.explanation)}</div>` : ""}
       </div>
     `;
   }).join("");

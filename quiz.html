@@ -15,6 +15,7 @@
       <a href="quiz.html" class="active">Quiz</a>
       <a href="flashcards.html">Flashcards</a>
       <a href="notes.html">Fiches de cours</a>
+      <a href="cheatsheet.html">Cheat Sheet</a>
     </nav>
     <div class="user-box">
       <span id="user-email"></span>
@@ -30,6 +31,12 @@
   <div id="setup-panel" class="card">
     <h2>Quiz personnalisé</h2>
     <div class="toolbar">
+      <label>
+        Module :
+        <select id="module-select">
+          <option value="all">Tous les modules</option>
+        </select>
+      </label>
       <label>
         Source :
         <select id="source-select">
@@ -47,14 +54,23 @@
         <input type="checkbox" id="mistakes-check"> Uniquement mes erreurs (<span id="mistakes-count">0</span>)
       </label>
     </div>
+    <p class="hint" id="dump-hint" style="display:none;">⚠️ La source « CEH v13 Dump » vient d'une banque communautaire non vérifiée officiellement — quelques réponses peuvent être incorrectes.</p>
     <button class="btn" id="start-btn">Démarrer le quiz</button>
 
     <div class="exam-mode-box">
       <div>
-        <strong>Examen blanc</strong>
+        <strong>Examen blanc complet</strong>
         <p class="subtitle" style="margin:4px 0 0;">125 questions mélangées, 4h chronométrées, conditions proches de l'examen réel (312-50). Correction détaillée uniquement à la fin.</p>
       </div>
       <button class="btn secondary" id="start-exam-btn">Lancer l'examen blanc</button>
+    </div>
+
+    <div class="exam-mode-box">
+      <div>
+        <strong>Examen court</strong>
+        <p class="subtitle" style="margin:4px 0 0;">50 questions mélangées, 1h chronométrée — pour une session de révision plus courte.</p>
+      </div>
+      <button class="btn secondary" id="start-short-exam-btn">Lancer l'examen court</button>
     </div>
   </div>
 

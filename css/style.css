@@ -148,6 +148,27 @@ a:hover { text-decoration: underline; }
   line-height: 1.4;
 }
 
+.auth-success {
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.auth-links {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 13px;
+}
+
+.auth-links a {
+  color: var(--text-dim);
+}
+
+.auth-links a:hover {
+  color: var(--accent);
+}
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -271,7 +292,11 @@ select, input[type=number] {
   padding: 8px 12px;
   border-radius: 8px;
   font-size: 14px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
+
+.toolbar label { max-width: 100%; }
 
 /* Quiz */
 .quiz-progress {
@@ -331,6 +356,16 @@ select, input[type=number] {
   font-size: 11px;
   color: var(--text-dim);
   margin-bottom: 10px;
+}
+
+.hint {
+  font-size: 12.5px;
+  color: var(--warn);
+  background: rgba(255, 180, 84, 0.08);
+  border: 1px solid rgba(255, 180, 84, 0.3);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 12px 0 0;
 }
 
 .exam-mode-box {
@@ -531,4 +566,9 @@ select, input[type=number] {
   .notes-layout { grid-template-columns: 1fr; }
   .notes-toc { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 12px; }
   .topbar { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .topbar-right { flex-direction: column; align-items: flex-start; gap: 10px; width: 100%; }
+  .topbar nav { flex-wrap: wrap; gap: 8px 14px; font-size: 13px; }
+  .exam-mode-box { flex-direction: column; align-items: stretch; }
+  .quiz-progress-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .notes-content table { display: block; overflow-x: auto; white-space: nowrap; }
 }

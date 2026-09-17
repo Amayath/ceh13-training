@@ -18,12 +18,16 @@
       <label>Email
         <input type="email" id="email" autocomplete="email" required>
       </label>
-      <label>Mot de passe
-        <input type="password" id="password" autocomplete="current-password" minlength="6" required>
+      <label id="password-field">Mot de passe
+        <input type="password" id="password" autocomplete="current-password" minlength="8" required>
       </label>
       <div id="auth-error" class="auth-error" style="display:none;"></div>
+      <div id="auth-success" class="auth-success" style="display:none;"></div>
       <button type="submit" class="btn" id="submit-btn" style="width:100%;">Se connecter</button>
     </form>
+    <div class="auth-links">
+      <a href="#" id="forgot-toggle">Mot de passe oublié ?</a>
+    </div>
   </div>
 </div>
 

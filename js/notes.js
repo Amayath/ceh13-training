@@ -1,5 +1,6 @@
 let MODULES = [];
 let NOTES = {};
+let QUESTION_COUNT_BY_MODULE = {};
 
 function getParam(name) {
   return new URLSearchParams(location.search).get(name);
@@ -10,12 +11,17 @@ async function initNotes() {
   if (!session) return;
   await Storage.init();
 
-  const [modules, notes] = await Promise.all([
+  const [modules, notes, questions] = await Promise.all([
     fetch("data/modules.json").then(r => r.json()),
     fetch("data/notes.json").then(r => r.json()),
+    fetch("data/questions.json").then(r => r.json()),
   ]);
   MODULES = modules;
   NOTES = notes;
+  questions.forEach(q => {
+    if (!q.module) return;
+    QUESTION_COUNT_BY_MODULE[q.module] = (QUESTION_COUNT_BY_MODULE[q.module] || 0) + 1;
+  });
 
   const toc = document.getElementById("notes-toc");
   toc.innerHTML = modules.map(m => {
@@ -58,7 +64,12 @@ function renderModule(slug) {
 
   Storage.markNotesRead(slug);
 
-  content.innerHTML = noteData.sections.map(sec => `
+  const qCount = QUESTION_COUNT_BY_MODULE[slug] || 0;
+  const quizLink = qCount > 0
+    ? `<a class="btn small secondary" href="quiz.html?module=${slug}" style="margin-bottom:20px; display:inline-block;">Réviser ce module en quiz (${qCount} questions)</a>`
+    : "";
+
+  content.innerHTML = quizLink + noteData.sections.map(sec => `
     <h3>${sec.heading}</h3>
     ${sec.html}
   `).join("");

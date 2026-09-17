@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheat Sheet — CEH13 Trainer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">CEH13<span>_trainer</span></div>
+  <div class="topbar-right">
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="notes.html">Fiches de cours</a>
+      <a href="cheatsheet.html" class="active">Cheat Sheet</a>
+    </nav>
+    <div class="user-box">
+      <span id="user-email"></span>
+      <button id="logout-btn" class="btn small secondary">Déconnexion</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Cheat Sheet</h1>
+  <p class="subtitle">La référence rapide à parcourir juste avant l'examen — tout ce qui est dispersé dans les modules, regroupé ici.</p>
+
+  <div class="notes-content">
+
+    <h3>Ports à connaître par cœur</h3>
+    <table>
+      <tr><td>FTP</td><td>21 (TCP)</td></tr>
+      <tr><td>SSH</td><td>22 (TCP)</td></tr>
+      <tr><td>Telnet</td><td>23 (TCP)</td></tr>
+      <tr><td>SMTP</td><td>25 (TCP)</td></tr>
+      <tr><td>DNS</td><td>53 (UDP, TCP pour zone transfer)</td></tr>
+      <tr><td>DHCP</td><td>67/68 (UDP)</td></tr>
+      <tr><td>HTTP</td><td>80 (TCP)</td></tr>
+      <tr><td>Kerberos</td><td>88 (TCP)</td></tr>
+      <tr><td>POP3</td><td>110 (TCP)</td></tr>
+      <tr><td>NTP</td><td>123 (UDP)</td></tr>
+      <tr><td>NetBIOS</td><td>137/138 (UDP), 139 (TCP)</td></tr>
+      <tr><td>IMAP</td><td>143 (TCP)</td></tr>
+      <tr><td>SNMP</td><td>161 (UDP requêtes), 162 (UDP traps)</td></tr>
+      <tr><td>LDAP</td><td>389 (TCP)</td></tr>
+      <tr><td>HTTPS</td><td>443 (TCP)</td></tr>
+      <tr><td>SMB</td><td>445 (TCP)</td></tr>
+      <tr><td>Rlogin</td><td>513 (TCP)</td></tr>
+      <tr><td>RDP</td><td>3389 (TCP)</td></tr>
+      <tr><td>NFS</td><td>2049 (UDP/TCP)</td></tr>
+      <tr><td>MySQL</td><td>3306 (TCP)</td></tr>
+      <tr><td>ADB (Android Debug Bridge)</td><td>5555 (TCP)</td></tr>
+    </table>
+
+    <h3>Flags Nmap essentiels</h3>
+    <table>
+      <tr><td>-sS</td><td>SYN Scan (stealth / half-open)</td></tr>
+      <tr><td>-sT</td><td>TCP Connect Scan (par défaut)</td></tr>
+      <tr><td>-sU</td><td>UDP Scan</td></tr>
+      <tr><td>-sX</td><td>Xmas Scan (FIN, PSH, URG)</td></tr>
+      <tr><td>-sN</td><td>Null Scan (aucun flag)</td></tr>
+      <tr><td>-sA</td><td>ACK Scan (détection de règles firewall)</td></tr>
+      <tr><td>-sV</td><td>Service Version Detection</td></tr>
+      <tr><td>-O</td><td>OS Detection</td></tr>
+      <tr><td>-sC</td><td>Script Scan (NSE par défaut)</td></tr>
+      <tr><td>-A</td><td>Scan avancé (-O + -sV + -sC + traceroute)</td></tr>
+      <tr><td>-p-</td><td>Scan des 65535 ports</td></tr>
+      <tr><td>-T0 à -T5</td><td>Timing : T0/T1 furtif, T4 rapide, T5 agressif</td></tr>
+      <tr><td>-f</td><td>Fragmentation des paquets (évasion)</td></tr>
+      <tr><td>-D</td><td>Decoy scan (fausses IP sources)</td></tr>
+      <tr><td>--spoof-mac</td><td>Usurpation d'adresse MAC</td></tr>
+    </table>
+
+    <h3>Suite Aircrack-ng</h3>
+    <table>
+      <tr><td>airbase-ng</td><td>Capture le handshake WPA/WPA2, agit comme faux AP</td></tr>
+      <tr><td>aircrack-ng</td><td>Cracking WEP/WPA/WPA2 PSK</td></tr>
+      <tr><td>airdecap-ng</td><td>Déchiffre WEP/WPA/WPA2</td></tr>
+      <tr><td>airdrop-ng</td><td>Désauthentification ciblée</td></tr>
+      <tr><td>aireplay-ng</td><td>Génère du trafic (capture IV/handshake)</td></tr>
+      <tr><td>airgraph-ng</td><td>Graphe des relations client–AP</td></tr>
+    </table>
+
+    <h3>Password cracking — commandes types</h3>
+    <ul>
+      <li><span class="term">Hashcat</span> — <code>hashcat -a 0 -m 0 hash.txt rockyou.txt</code> (-a mode d'attaque, -m type de hash)</li>
+      <li><span class="term">Hydra</span> — <code>hydra -l user -P wordlist.txt &lt;ip&gt; &lt;service&gt;</code></li>
+      <li><span class="term">John the Ripper</span> — <code>unshadow passwd.txt shadow.txt &gt; hash.txt</code> puis <code>john hash.txt</code></li>
+      <li><span class="term">SQLMap</span> — <code>sqlmap -u &lt;url&gt; --dbs --random-agent</code></li>
+    </ul>
+
+    <h3>OWASP Top 10 (Web)</h3>
+    <ol>
+      <li>Broken Access Control</li>
+      <li>Cryptographic Failures</li>
+      <li>Injection (dont SQLi)</li>
+      <li>Insecure Design</li>
+      <li>Security Misconfiguration</li>
+      <li>Vulnerable and Outdated Components</li>
+      <li>Identification & Authentication Failures</li>
+      <li>Software & Data Integrity Failures</li>
+      <li>Security Logging & Monitoring Failures</li>
+      <li>SSRF</li>
+    </ol>
+
+    <h3>Cyber Kill Chain (Lockheed Martin) — 7 phases</h3>
+    <ol>
+      <li>Reconnaissance</li>
+      <li>Weaponization</li>
+      <li>Delivery</li>
+      <li>Exploitation</li>
+      <li>Installation</li>
+      <li>Command and Control (C2)</li>
+      <li>Actions on Objectives</li>
+    </ol>
+
+    <h3>CEH Hacking Methodology — 5 phases</h3>
+    <ol>
+      <li>Reconnaissance</li>
+      <li>Scanning</li>
+      <li>Gaining Access</li>
+      <li>Maintaining Access</li>
+      <li>Clearing Tracks</li>
+    </ol>
+
+    <h3>Chiffrement — repères rapides</h3>
+    <table>
+      <tr><td>WEP</td><td>RC4, IV 24 bits — cassable facilement</td></tr>
+      <tr><td>WPA</td><td>TKIP, RC4 128 bits + MIC (Michael)</td></tr>
+      <tr><td>WPA2</td><td>AES + CCMP</td></tr>
+      <tr><td>WPA3</td><td>GCMP-256 + HMAC-SHA-384, SAE</td></tr>
+      <tr><td>Symétrique</td><td>AES, DES, RC4 — même clé chiffre/déchiffre</td></tr>
+      <tr><td>Asymétrique</td><td>RSA, ECC, Diffie-Hellman — clé publique/privée</td></tr>
+      <tr><td>Hash</td><td>MD5/SHA-1 obsolètes ; SHA-256/SHA-3 recommandés</td></tr>
+    </table>
+
+    <h3>Éléments de sécurité de l'information</h3>
+    <p><span class="term">C.I.A.A.N.</span> — Confidentiality, Integrity, Availability, Authenticity, Non-Repudiation.</p>
+
+    <h3>Classification des hackers</h3>
+    <p>White Hat (autorisé, défensif) · Black Hat (malveillant) · Gray Hat (entre les deux) · Hacktivist (politique) · Script Kiddie (débutant, outils tout faits) · State-Sponsored (gouvernemental) · Suicide Hacker (aucune retenue légale) · Blue Hat (testeur externe temporaire) · Red Hat (justicier agressif)</p>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabaseClient.js"></script>
+<script src="js/auth.js"></script>
+<script>
+requireSession();
+</script>
+</body>
+</html>
