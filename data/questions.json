@@ -39,7 +39,7 @@
     "correctIndex": 2,
     "explanation": "https://www.ibm.com/cloud/learn/three-tier-architecture Three-tier architecture is a well-established software application architecture that organizes applications into three logical and physical computing tiers: the presentation tier, or user interface; the application tier (logic tier), where data is processed; and the data tier, where the data associated with the application is stored and managed. Presentation tier The presentation tier is the user interface and communication layer of the application, where the end user interacts with the application. Its main purpose is to display information to and collect information from the user. This top-level tier can run on a web browser, as a desktop application, or a graphical user interface (GUI), for example. Web presentation tiers are usually developed using HTML, CSS, and JavaScript. Desktop applications can be written in a variety of languages depending on the platform. Application tier (logic tier) The application tier, also known as the logic tier or middle tier, is the heart of the application. In this tier, information collected in the presentation tier is processed - sometimes against other information in the data tier - using business logic, a specific set of business rules. The application tier can also add, delete or modify data in the data tier. The application tier is typically developed using Python, Java, Perl, PHP or Ruby, and communicates with the data tier using API calls. Data tier The data tier, sometimes called database tier, data access tier, or back-end, is where the information processed by the application is stored and managed. This can be a relational database management system such as PostgreSQL, MySQL, MariaDB, Oracle, DB2, Informix or Microsoft SQL Server, or in a NoSQL Database server such as Cassandra, CouchDB, or MongoDB. Tier vs. layer In discussions of a three-tier architecture, layer is often used interchangeably – and mistakenly – for tier, as in 'presentation layer' or 'business logic layer.' They aren't the same. A 'layer' refers to a functional division of the software, but a 'tier' refers to a functional division of the software that runs on infrastructure separate from the other divisions. The Contacts app on your phone, for example, is a three-layer application, but a single-tier application, because all three layers run on your phone.",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod14"
   },
   {
     "id": "Exam Set 2-4",
@@ -249,7 +249,7 @@
     "correctIndex": 0,
     "explanation": ".bash_history - file created by Bash, a Unix-based shell program commonly used on Mac OS X and Linux operating systems; stores a history of user commands entered at the command prompt; used for viewing old commands that have been executed. History expansions introduce words from the history list into the input stream, making it easy to repeat commands, insert the arguments to a previous command into the current input line, or fix errors in previous commands quickly. You may pass sensitive information such as passwords and it is stored in shell history file. history -c clears your history in the current shell. That's enough (but overkill) if you've just typed your password and haven't exited that shell or saved its history explicitly. When you exit bash, the history is saved to the history file, which by default is .bash_history in your home directory. More precisely, the history created during the current session is appended to the file; entries that are already present are unaffected. Instead of removing all your history entries, you can open .bash_history in an editor and remove the lines you don't want to keep. You can also do that inside bash, less conveniently, by using history to display all the entries, then history -d to delete the entries you don't want, and finally history -w to save. Note that if you have multiple running bash instances that have read the password, each of them might save it again. Before definitively purging the password from the history file, make sure that it is purged from all running shell instances. Even after you've edited the history file, it's possible that your password is still present somewhere on the disk from an earlier version of the file. It can't be retrieved through the filesystem anymore, but it might still be possible (but probably not easy) to find it by accessing the disk directly. If you use this password elsewhere and your disk gets stolen (or someone gets access to the disk), this could be a problem.",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod08"
   },
   {
     "id": "Exam Set 2-20",
@@ -389,7 +389,7 @@
     "correctIndex": 0,
     "explanation": "https://subinsb.com/default-device-ttl-values/ The default TTL value for modern versions of Windows is 128: Question 32: Which of the following is the hacker's first step in conducting a DNS cache poisoning attack on a target organization?  The hacker makes a request to the DNS resolver. (Correct)  The hacker queries a nameserver using the DNS resolver.  The hacker uses TCP to poison the DNS resolver.  The hacker forges a reply from the DNS resolver. Explanation https://ru.wikipedia.org/wiki/DNS_spoofing DNS spoofing is a threat that copies the legitimate server destinations to divert the domain's traffic. Ignorant these attacks, the users are redirected to malicious websites, which results in insensitive and personal data being leaked. It is a method of attack where your DNS server is tricked into saving a fake DNS entry. This will make the DNS server recall a fake site for you, thereby posing a threat to vital information stored on your server or computer. The cache poisoning codes are often found in URLs sent through spam emails. These emails are sent to prompt users to click on the URL, which infects their computer. When the computer is poisoned, it will divert you to a fake IP address that looks like a real thing. This way, the threats are injected into your systems as well. Different Stages of Attack of DNS Cache Poisoning: - The attacker proceeds to send DNS queries to the DNS resolver, which forwards the Root/TLD authoritative DNS server request and awaits an answer. - The attacker overloads the DNS with poisoned responses that contain several IP addresses of the malicious website. To be accepted by the DNS resolver, the attacker's response should match a port number and the query ID field before the DNS response. Also, the attackers can force its response to increasing their chance of success. - If you are a legitimate user who queries this DNS resolver, you will get a poisoned response from the cache, and you will be automatically redirected to the malicious website.",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod03"
   },
   {
     "id": "Exam Set 2-33",
@@ -515,7 +515,7 @@
     "correctIndex": 3,
     "explanation": "https://en.wikipedia.org/wiki/Subnetwork As we can see, we have an IP address of 10.1.4.0 with a subnet mask of /23. According to the question, we need to determine which IP address will be included in the range of the last 100 IP addresses. The available addresses for hosts start with 10.1.4.1 and end with 10.1.5.254. Now you can clearly see that the last 100 addresses include the address 10.1.5.200.",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod03"
   },
   {
     "id": "Exam Set 2-42",
@@ -823,7 +823,7 @@
     "correctIndex": 0,
     "explanation": "https://www.infocyte.com/blog/2019/02/16/cybersecurity-101-what-you-need-to-know- about-false-positives-and-false-negatives/ False positives are mislabeled security alerts, indicating there is a threat when in actuality, there isn’t. These false/non-malicious alerts (SIEM events) increase noise for already over- worked security teams and can include software bugs, poorly written software, or unrecognized network traffic. False negatives are uncaught cyber threats — overlooked by security tooling because they’re dormant, highly sophisticated (i.e. file-less or capable of lateral movement) or the security infrastructure in place lacks the technological ability to detect these attacks.",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod05"
   },
   {
     "id": "Exam Set 2-64",
@@ -977,7 +977,7 @@
     "correctIndex": 0,
     "explanation": "According to EC-Council's training materials: Tier-1: Developer machines - image creation, testing and accreditation Tier-2: Testing and accreditation systems - verification and validation of image contents, signing images and sending them to the registries Tier-3: Registries - storing images and disseminating images to the orchestrators based on requests Tier-4: Orchestrators - transforming images into containers and deploying containers to hosts Tier-5: Hosts - operating and managing containers as instructed by the orchestrator",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod19"
   },
   {
     "id": "Exam Set 2-75",
@@ -1047,7 +1047,7 @@
     "correctIndex": 3,
     "explanation": "https://www.offensive-security.com/metasploit-unleashed/msfencode/ One of the best ways to avoid being stopped by antivirus software is to encode our payload with msfencode. Msfencode is a useful tool that alters the code in an executable so that it looks different to antivirus software but will still run the same way. Much as the binary attachment in email is encoded in Base64, msfencode encodes the original executable in a new binary. Then, when the executable is run, msfencode decodes the original code into memory and exe-cutes it. Incorrect answers: msfpayload https://www.offensive-security.com/metasploit-unleashed/msfpayload/ MSFpayload is a command line instance of Metasploit that is used to generate and output all of the various types of shellcode that are available in Metasploit. The most common use of this tool is for the generation of shellcode for an exploit that is not currently in the Metasploit Framework or for testing different types of shellcode and options before finalizing an Exploit Module. msfcli https://www.offensive-security.com/metasploit-unleashed/msfcli/ The msfcli provides a powerful command line interface to the framework. This allows you to easily add Metasploit exploits into any scripts you may create.",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "Exam Set 2-81",
@@ -1215,7 +1215,7 @@
     "correctIndex": 2,
     "explanation": "https://docs.microsoft.com/en-us/windows/win32/snmp/the-snmp-management- information-base-mib- A Management Information Base (MIB) describes a set of managed objects. An SNMP management console application can manipulate the objects on a specific computer if the SNMP service has an extension agent DLL that supports the MIB. Each managed object in a MIB has a unique identifier. The identifier includes the object's type (such as counter, string, gauge, or address), the object's access level (such as read or read/write), size restrictions, and range information. LMMIB2.MIB - Contains object types for workstation and server services. DHCP.MIB - Microsoft-defined MIB that contains object types for monitoring the network traffic between remote hosts and DHCP servers. HOSTMIB.MIB - Contains object types for monitoring and managing host resources. MIB_II.MIB - Contains the Management Information Base (MIB-II), which provides a simple, workable architecture and system for managing TCP/IP-based internets. WINS.MIB - Microsoft-defined MIB for the Windows Internet Name Service (WINS).",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod04"
   },
   {
     "id": "Exam Set 2-96",
@@ -1285,7 +1285,7 @@
     "correctIndex": 2,
     "explanation": "https://en.wikipedia.org/wiki/Representational_state_transfer RESTful APIs, which are also known as RESTful services, are designed using REST principles and HTTP communication protocols RESTful is a collection of resources that use HTTP methods such as PUT, POST, GET, and DELETE. Six guiding constraints define a RESTful system. These constraints restrict the ways that the server can process and respond to client requests so that, by operating within these constraints, the system gains desirable non-functional properties, such as performance, scalability, simplicity, modifiability, visibility, portability, and reliability. If a system violates any of the required constraints, it cannot be considered RESTful. Client–server architecture The principle behind the client-server constraints is the separation of concerns. Separating the user interface concerns from the data storage concerns improves the portability of the user interfaces across multiple platforms. It also improves scalability by simplifying the server components. Perhaps most significant to the Web is that the separation allows the components to evolve independently, thus supporting the Internet-scale requirement of multiple organizational domains. Statelessness In computing, a stateless protocol is a communications protocol in which no session information is retained by the receiver, usually a server. Relevant session data is sent to the receiver by the client in such a way that every packet of information transferred can be understood in isolation, without context information from previous packets in the session. This property of stateless protocols makes them ideal in high volume applications, increasing performance by removing server load caused by retention of session information. Cacheability As on the World Wide Web, clients and intermediaries can cache responses. Responses must, implicitly or explicitly, define themselves as either cacheable or non-cacheable to prevent clients from providing stale or inappropriate data in response to further requests. Well-managed caching partially or completely eliminates some client-server interactions, further improving scalability and performance. Layered system A client cannot ordinarily tell whether it is connected directly to the end server or to an intermediary along the way. If a proxy or load balancer is placed between the client and server, it won't affect their communications, and there won't be a need to update the client or server code. Intermediary servers can improve system scalability by enabling load balancing and by providing shared caches. Also, security can be added as a layer on top of the web services, separating business logic from security logic. Adding security as a separate layer enforces security policies. Finally, intermediary servers can call multiple other servers to generate a response to the client. Code on demand (optional) Servers can temporarily extend or customize the functionality of a client by transferring executable code: for example, compiled components such as Java applets, or client-side scripts such as JavaScript. Uniform interface The uniform interface constraint is fundamental to the design of any RESTful system. It simplifies and decouples the architecture, which enables each part to evolve independently. The four constraints for this uniform interface are: - Resource identification in requests. Individual resources are identified in requests, for example using URIs in RESTful Web services. The resources themselves are conceptually separate from the representations that are returned to the client. For example, the server could send data from its database as HTML, XML or as JSON—none of which are the server's internal representation. - Resource manipulation through representations. When a client holds a representation of a resource, including any metadata attached, it has enough information to modify or delete the resource's state. - Self-descriptive messages. Each message includes enough information to describe how to process the message. For example, which parser to invoke can be specified by a media type. - Hypermedia as the engine of application state (HATEOAS). Having accessed an initial URI for the REST application—analogous to a human Web user accessing the home page of a website—a REST client should then be able to use server-provided links dynamically to discover all the available resources it needs. As access proceeds, the server responds with text that includes hyperlinks to other resources that are currently available. There is no need for the client to be hard-coded with information regarding the structure or dynamics of the application.",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod14"
   },
   {
     "id": "Exam Set 2-101",
@@ -1341,7 +1341,7 @@
     "correctIndex": 3,
     "explanation": "Jan 3, 2020, 9:18:35 AM 10.240.212.18 - 54373 10.202.206.19 - 22 tcp_ip Let's just disassemble this entry. Jan 3, 2020, 9:18:35 AM - time of the request 10.240.212.18 - 54373 - client's IP and port 10.202.206.19 - server IP - 22 - SSH port",
     "source": "Exam Set 2",
-    "module": null
+    "module": "mod03"
   },
   {
     "id": "Exam Set 2-106",
@@ -1635,7 +1635,7 @@
     "correctIndex": 3,
     "explanation": "https://datatracker.ietf.org/doc/html/rfc793 Source Port (16 bits) Identifies the sending port. Sequence Number (32 bits) · If the SYN flag is set (1), then this is the initial sequence number. The sequence number of the actual first data byte and the acknowledged number in the corresponding ACK are then this sequence number plus 1. · If the SYN flag is clear (0), then this is the accumulated sequence number of the first data byte of this segment for the current session. Checksum (16 bits) The 16-bit checksum field is used for error-checking of the TCP header, the payload and an IP pseudo-header. The pseudo-header consists of the source IP address, the destination IP address, the protocol number for the TCP protocol (6) and the length of the TCP headers and payload (in bytes).",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod03"
   },
   {
     "id": "Exam Set 3-5",
@@ -1803,7 +1803,7 @@
     "correctIndex": 3,
     "explanation": "Rules of engagement (ROE) are the formal permissions to conduct a penetration test. They provide certain rights and restrictions to the test team for performing the test and help testers to overcome legal, federal, and policy-related restrictions to use different penetration testing tools and techniques. Some of the directives that should be clearly spelled out in RoE before you start the penetration test are as follows: · The type and scope of testing · Client contact details · Client IT team notifications · Sensitive data handling · Status meeting and reports",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Exam Set 3-18",
@@ -1929,7 +1929,7 @@
     "correctIndex": 1,
     "explanation": "https://www.cyberciti.biz/faq/unix-linux-dns-lookup-command/ Input: $ host -t a resolveddomain.com Sample output: resolveddomain.com has address 75.126.153.206 Incorrect answers: Input: $ host -t a resolveddomain.com Sample output: resolveddomain.com name server ns2.nixcraft.net. resolveddomain.com name server ns1.nixcraft.net. resolveddomain.com name server ns5.nixcraft.net. resolveddomain.com name server ns4.nixcraft.net. Input: $ host -t soa resolveddomain.com Sample output: resolveddomain.com has SOA record ns1.nixcraft.net. vivek.nixcraft.com. 2008072353 10800 3600 604800 3600",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod02"
   },
   {
     "id": "Exam Set 3-30",
@@ -2041,7 +2041,7 @@
     "correctIndex": 0,
     "explanation": "In counter-based tokens, both the token and the authenticating server maintain a counter, whose value besides a shared secret key is used to generate the one-time password. This type of token requires one or more actions from the user before generating and displaying the one-time password. Usually, the actions are pushing a power-on button, and in some types to enter a PIN number. The user action(s) will cause the token and the authenticating server to increment the counter.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "Exam Set 3-40",
@@ -2279,7 +2279,7 @@
     "correctIndex": 1,
     "explanation": "This is a very strange question, but, nevertheless, you can meet a similar question on the exam. Firstly, it is not clear why The Manager of Information Technology takes backups home, as this contradicts all safety standards in companies. Secondly, I will explain the logic behind the answer to this question by the method of exclusion: Degauss the backup tapes and transport them in a lockbox, it’s incorrect because degauss the backup tapes will result in data loss. Hash the backup tapes and transport them in a lockbox, it’s incorrect because the hash is a one-way function, and data on the backup tapes will be useless. We only have 2 options left: “Encrypt the backup tapes and transport them in a lockbox” and “Encrypt the backup tapes and use a courier to transport them”. Of course, we will choose the option with lockbox as this adds an extra layer of security.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Exam Set 3-58",
@@ -2293,7 +2293,7 @@
     "correctIndex": 1,
     "explanation": "https://moz.com/learn/seo/search-operators - Put minus (-) in front of any term (including operators) to exclude that term from the results - Put \"site:\" in front of a site or domain for search on a specific site Well, you're right, this question is very easy and is a joke, but think about this. Google provides a whole ocean of information and the correct use of search tools will not only reduce your time that you spend on searches (for example, I spend a lot of it), but also make it more efficient. You can filter out ads, useless repetitions, pages that have not been updated for a long time, and so on. In the hands of a real researcher, this is a powerful tool for auditing. Google search operators are the basis of a hacker method that will allow you, for example, to find holes in the configuration and computer code that the website uses. https://ru.wikipedia.org/wiki/Google_hacking",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod02"
   },
   {
     "id": "Exam Set 3-59",
@@ -2321,7 +2321,7 @@
     "correctIndex": 2,
     "explanation": "https://www.ncsc.gov.uk/collection/biometrics/choosing-biometrics The National Cyber Security Centre (NCSC) offers a list of questions and answers that you should go through, trying to decide which modality is suitable for your project(the full list is available at the link). What are the locations and environments where biometric devices will be used? Environmental factors, such as illumination, acoustic noise, and humidity, have consequences for each of the modalities. For example, face recognition is known to be more challenging in outdoor lighting conditions. Fingerprint systems struggle in high humidity or very dry conditions. You will need to take into account any possible environmental factors which your proposed use will have to overcome. Required throughput rate Throughput can mean a number of different things - data collection speeds (e.g. the speed at which individuals can be processed at the data collection point), data processing speed or enrolment time. For example, an access control system through a single portal taking 20 seconds to process each person would take nearly 2 hours to process a population of 300, most likely making the system unusable. Some modalities are inherently faster than others. What is your target population? Sensors will need to accommodate the range of people within a population, taking account of age, height, physical ability, ethnicity and other variations. The ergonomics of the biometric system must be designed with the target population in mind. Some biometric characteristics are harder to capture for some parts of a population. For example, fingerprint doesn't work as well with young children and older people as it does with those within the middle age ranges. The problem cases might not be obvious prior to deployment.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Exam Set 3-61",
@@ -2377,7 +2377,7 @@
     "correctIndex": 1,
     "explanation": "Workplace monitoring is subject to various federal and state constitutional provisions and laws regarding when employees have a right to privacy and if and when they must be notified that they are being monitored. From a legal perspective, disclosing surveillance is the smartest tactic. Letting employees know that they will be monitored removes employees' reasonable expectation of privacy—the element that often forms the basis for invasion-of- privacy lawsuits arising under common law. The two main restrictions on workplace monitoring are the Electronic Communications Privacy Act of 1986 (ECPA) (18 U.S.C. Section 2511 et seq.) and common-law protection against invasion of privacy. The ECPA is the only federal law that directly governs the monitoring of electronic communications in the workplace. Congress passed it in 1986 as an amendment to the federal Wiretap Act. Whereas the Wiretap Act restricted only the interception and monitoring of oral and wire communications, the ECPA extended those restrictions to electronic communications such as e-mail. At first glance, the ECPA appears to prohibit an employer from intentionally intercepting its employees' oral, wire, and electronic communications. However, the ECPA contains several exceptions to this prohibition, and two of these exceptions are of particular importance to employers. The first is commonly known as the business purpose exception, which permits employers to monitor oral and electronic communications as long as the company can show a legitimate business purpose for doing so. The second is the consent exception, which allows employers to monitor employee communications provided that they have their employees' consent to do so. An important and often overlooked distinction between the two exceptions is that the consent exception is not limited to business communications, and, therefore, a company arguably can monitor personal electronic communications if it can show employee consent. See May, an employee secretly record conversations with management and other employees without informing them? In addition to these two exceptions, the ECPA contains a loophole that may limit employer liability for certain methods of monitoring. The act's definition of \"electronic communications\" expressly applies to the transmission of such communications and does not include such communications' electronic storage. Therefore, courts have distinguished between monitoring electronic communications such as e-mail messages while they are being transmitted versus viewing e-mails while they are in storage. Viewing stored e-mail is similar to searching through an employee's papers and files. Several courts confronting this issue have found that monitoring electronic communications after transmission does not run afoul of the ECPA. The Stored Communications Act (SCA) is part of the ECPA and prohibits an entity providing an electronic communication service to the public from knowingly divulging electronic communication contents. It applies only to communications in which the employee had a reasonable expectation of privacy. When an employer makes it clear that certain communications are not protected, the SCA likely will not apply. The ECPA merely sets the minimum restrictions on employee monitoring; individual states are free to impose greater limitations, and many have done so. For instance, in Connecticut, employers that monitor must provide employees advance written notice that specifies the specific types of monitoring methods. In addition, several state constitutions, including those of California, Florida, Louisiana, and South Carolina, expressly guarantee citizens a right to privacy. An explicit declaration of privacy in a state constitution may give employees heightened expectations of privacy, and employers in such states are wise to take additional steps to diminish employees' privacy expectations with respect to electronic information and communication in the workplace.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod08"
   },
   {
     "id": "Exam Set 3-66",
@@ -2391,7 +2391,7 @@
     "correctIndex": 1,
     "explanation": "Business impact analysis (BIA) is a systematic process to determine and evaluate the potential effects of an interruption to critical business operations due to a disaster, accident, or emergency. A BIA is an essential component of an organization's business continuance plan. It includes an exploratory component to reveal any vulnerabilities and a planning component to develop strategies for minimizing risk. The result is a business impact analysis report, which describes the potential risks specific to the organization studied. One of the basic assumptions behind BIA is that every component of the organization is reliant upon the continued functioning of every other component, but that some are more crucial than others and require a greater allocation of funds in the wake of a disaster. For example, a business may be able to continue normally if the cafeteria has to close but would come to a complete halt if the information system crashes. It is easy to confuse BIA and risk analysis, but they represent different steps in a business continuity plan. Incorrect answers: Risk Mitigation Risk mitigation can be defined as taking steps to reduce adverse effects. There are four types of risk mitigation strategies that hold unique to Business Continuity and Disaster Recovery. When mitigating risk, it’s important to develop a strategy that closely relates to and matches your company’s profile. Emergency Plan Response (EPR) Emergency Response Plan — a set of written procedures for dealing with emergencies that minimize the impact of the event and facilitate recovery from the event. Disaster Recovery Planning (DRP) A disaster recovery plan (DRP) is a documented, structured approach that describes how an organization can quickly resume work after an unplanned incident. A DRP is an essential part of a business continuity plan (BCP). It is applied to the aspects of an organization that depend on a functioning IT infrastructure. A DRP aims to help an organization resolve data loss and recover system functionality so that it can perform in the aftermath of an incident, even if it operates at a minimal level.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Exam Set 3-67",
@@ -2447,7 +2447,7 @@
     "correctIndex": 2,
     "explanation": "ESP transport mode should be used to ensure the integrity and confidentiality of data that is exchanged within the same LAN. Incorrect answers: AH transport would only ensure the integrity of the LAN data, not the confidentiality; therefore, this answer is incorrect. ESP tunnel mode should be used to secure the integrity and confidentiality of data between networks and not within a network; therefore, the answer is incorrect. AH tunnel mode should be used to secure the integrity of data between networks and not within a network; therefore, the answer is incorrect.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod20"
   },
   {
     "id": "Exam Set 3-71",
@@ -2517,7 +2517,7 @@
     "correctIndex": 1,
     "explanation": "Anyone can register an email on yahoo, Gmail, etc. Scammers can easily use this to mislead the victim.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod09"
   },
   {
     "id": "Exam Set 3-78",
@@ -2531,7 +2531,7 @@
     "correctIndex": 0,
     "explanation": "https://en.wikipedia.org/wiki/Bollard A bollard is a sturdy, short, vertical post. The term originally referred to a post on a ship or quay used principally for mooring boats but is now also used to refer to posts installed to control road traffic and posts designed to prevent ram-raiding and vehicle-ramming attacks. Incorrect answers: Mantrap https://en.wikipedia.org/wiki/Mantrap_(access_control) A mantrap, air lock, sally port or access control vestibule is a physical security access control system comprising a small space with two sets of interlocking doors, such that the first set of doors must close before the second set opens. Airlocks have a very similar design, allowing free ingress and egress while also restricting airflow. In a manual mantrap, a guard locks and unlocks each door in sequence. An intercom and/or video camera are often used to allow the guard to control the trap from a remote location. In an automatic mantrap, identification may be required for each door, sometimes even possibly different measures for each door. For example, a key may open the first door, but a personal identification number entered on a number pad opens the second. Other methods of opening doors include proximity cards or biometric devices such as fingerprint readers or iris recognition scans. Turnstile https://en.wikipedia.org/wiki/Turnstile A turnstile (also called a turnpike, baffle gate, automated gate in some regions) is a form of gate which allows one person to pass at a time. It can also be made so as to enforce one- way human traffic, and in addition, it can restrict passage only to people who insert a coin, a ticket, a pass, or similar. Thus a turnstile can be used in the case of paid access (sometimes called a faregate or ticket barrier when used for this purpose), for example to access public transport, a pay toilet, or to restrict access to authorized people, for example in the lobby of an office building. Traffic barrier https://en.wikipedia.org/wiki/Traffic_barrier Traffic barriers (sometimes called Armco barriers, also known in North America as guardrails or guard rails and in Britain as crash barriers) keep vehicles within their roadway and prevent them from colliding with dangerous obstacles such as boulders, sign supports, trees, bridge abutments, buildings, walls, and large storm drains, or from traversing steep (non- recoverable) slopes or entering deep water. They are also installed within medians of divided highways to prevent errant vehicles from entering the opposing carriageway of traffic and help to reduce head-on collisions. Some of these barriers, designed to be struck from either side, are called median barriers. Traffic barriers can also protect vulnerable areas like schoolyards, pedestrian zones, and fuel tanks from errant vehicles.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Exam Set 3-79",
@@ -2545,7 +2545,7 @@
     "correctIndex": 3,
     "explanation": "https://en.wikipedia.org/wiki/Remote_access_policy Remote access policy is a document which outlines and defines acceptable methods of remotely connecting to the internal network. It is essential in large organization where networks are geographically dispersed and extend into insecure network locations such as public networks or unmanaged home networks. Incorrect answers: Network security policy https://en.wikipedia.org/wiki/Network_security_policy A network security policy is a formal document that outlines the principles, procedures and guidelines to enforce, manage, monitor and maintain security on a computer network. It is designed to ensure that the computer network is protected from any act or process that can breach its security. Information protection policy https://en.wikipedia.org/wiki/Information_protection_policy Information protection policy is a document which provides guidelines to users on the processing, storage and transmission of sensitive information. Main goal is to ensure information is appropriately protected from modification or disclosure. It may be appropriate to have new employees sign policy as part of their initial orientation. It should define sensitivity levels of information. Access control policy Access control policies are high-level requirements that specify how access is managed and who may access information under what circumstances. For instance, policies may pertain to resource usage within or across organizational units or may be based on need-to-know, competence, authority, obligation, or conflict-of-interest factors. At a high level, access control policies are enforced through a mechanism that translates a user’s access request, often in terms of a structure that a system provides. Access Control List is a familiar example.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Exam Set 3-80",
@@ -2643,7 +2643,7 @@
     "correctIndex": 2,
     "explanation": "This question is based on the information provided in the EC-Council's courseware: IPsec driver: Software that performs protocol-level functions required to encrypt and decrypt packets.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod20"
   },
   {
     "id": "Exam Set 3-91",
@@ -2769,7 +2769,7 @@
     "correctIndex": 1,
     "explanation": "https://en.wikipedia.org/wiki/Address_Resolution_Protocol When a new computer joins a LAN, it is assigned a unique IP address to use for identification and communication. When an incoming packet destined for a host machine on a particular LAN arrives at a gateway, the gateway asks the ARP program to find a MAC address that matches the IP address. A table called the ARP cache maintains a record of each IP address and its corresponding MAC address. All operating systems in an IPv4 Ethernet network keep an ARP cache. Whenever a host requests a MAC address to send a packet to another host in the LAN, it checks its ARP cache to see if the IP to MAC address translation already exists. If it does, then a new ARP request is unnecessary. If the translation does not exist, then the request for network addresses is sent, and ARP is performed. ARP broadcasts a request packet to all the LAN machines and asks if any of the machines know they are using that particular IP address. When a machine recognizes the IP address as its own, it sends a reply so ARP can update the cache for future reference and proceed with the communication. Host machines that don't know their own IP address can use the Reverse ARP (RARP) protocol for discovery. An ARP cache size is limited and is periodically cleansed of all entries to free up space; in fact, addresses tend to stay in the cache for only a few minutes. Frequent updates allow other devices in the network to see when a physical host changes their requested IP address. In the cleaning process, unused entries are deleted, and any unsuccessful attempts to communicate with computers that are not currently powered on.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod08"
   },
   {
     "id": "Exam Set 3-101",
@@ -2797,7 +2797,7 @@
     "correctIndex": 2,
     "explanation": "https://en.wikipedia.org/wiki/Biometrics Biometric identifiers are the distinctive, measurable characteristics used to label and describe individuals. Biometric identifiers are often categorized as physiological versus behavioural characteristics. Physiological characteristics are related to the shape of the body. Examples include, but are not limited to fingerprint, palm veins, face recognition, DNA, palm print, hand geometry, iris recognition, retina and odour/scent. Behavioural characteristics are related to the pattern of behaviour of a person, including but not limited to typing rhythm, gait, keystroke, signature, behavioural profiling, and voice. Some researchers have coined the term behaviour metrics to describe the latter class of biometrics. Indicators of weight and height are much more difficult to use. The weight, for example, can be easily changed.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Exam Set 3-103",
@@ -3021,7 +3021,7 @@
     "correctIndex": 0,
     "explanation": "https://en.wikipedia.org/wiki/Single_sign-on Single sign-on (SSO) is an authentication scheme that allows a user to log in with a single ID and password to any of several related, yet independent, software systems. True single sign-on allows the user to login once and access services without re-entering authentication factors. Incorrect answers: Mandatory access control (MAC) https://en.wikipedia.org/wiki/Mandatory_access_control A security strategy that restricts individual resource owners' ability to grant or deny access to resource objects in a file system. MAC criteria are defined by the system administrator, strictly enforced by the operating system (OS) or security kernel, and cannot be altered by end-users. Role-Based Access Control (RBAC) https://en.wikipedia.org/wiki/Role-based_access_control RBAC is a method of restricting network access based on the roles of individual users within an enterprise. RBAC lets employees have access rights only to the information they need to do their jobs and prevents them from accessing information that doesn't pertain to them. Discretionary Access Control (DAC) https://en.wikipedia.org/wiki/Discretionary_access_control A discretionary access control (DAC) policy assigns access rights based on rules specified by users. The underlying philosophy in DAC is that subjects can determine who has access to their objects.",
     "source": "Exam Set 3",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "Exam Set 3-122",
@@ -3091,7 +3091,7 @@
     "correctIndex": 2,
     "explanation": "https://www.ghacks.net/2006/09/15/how-to-dump-all-usb-files-without-the-user-knowing/ USBdumper runs silently as a background process once started and copies the complete contents of every connected usb device to the system without the knowledge of the user. It creates a directory with the current date and begins the background copying process. The user has no indication that the files stored on the USB device are copied from the USB to the local system.",
     "source": "Exam Set 4",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "Exam Set 4-2",
@@ -3217,7 +3217,7 @@
     "correctIndex": 3,
     "explanation": "https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory Linux hides files and folders that have a period at the start of their name. To hide a file or folder, rename it and place a period at the start of the filename.",
     "source": "Exam Set 4",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "Exam Set 4-11",
@@ -3524,7 +3524,7 @@
     "correctIndex": 2,
     "explanation": "You will probably find such a classification of Adversarial Behavioral Identification only in the EC-Council's training materials. Still, you can find a question on this topic on the exam, so you need to understand it. Unspecified Proxy Activities An adversary can create and configure multiple domains pointing to the same host, thus, allowing an adversary to switch quickly between the domains to avoid detection. Security professionals can find unspecified domains by checking the data feeds that are generated by those domains. Use of Command-Line Interface On gaining access to the target system, an adversary can use the command-line interface to interact with the target system, browse the files, read file content, modify file content, create new accounts, connect to the remote system, and download and install malicious code. Data staging After successfully penetrating a target’s network, the adversary uses data staging techniques to collect and combine as much data as possible. The types of data collected by an adversary include sensitive data about the employees and customers, financial information, etc. DNS tunnelling Adversaries use DNS tunnelling to obfuscate malicious traffic in the legitimate traffic carried by common protocols used in the network. Using DNS tunnelling, an adversary can also communicate with the command and control server, bypass security controls, and perform data exfiltration.",
     "source": "Exam Set 4",
-    "module": null
+    "module": "mod07"
   },
   {
     "id": "Exam Set 4-35",
@@ -3608,7 +3608,7 @@
     "correctIndex": 2,
     "explanation": "Question 42: You need to identify the OS on the attacked machine. You know that TTL: 64 and Window Size: 5840. Which is OS running on the attacked machine?  Linux OS (Correct)  Mac OS  Google's customized Linux  Windows OS Explanation https://www.netresec.com/?page=Blog&month=2011-11&post=Passive-OS-Fingerprinting Network traffic from a computer can be analyzed to detect what operating system it is running. This is to a large extent due to differences in how the TCP/IP stack is implemented in various operating systems. You can inspect the initial Time To Live (TTL) in the IP header and the TCP window size (the size of the receive window) of the first packet in a TCP session, i.e. the SYN or SYN+ACK packet and identify OS using the following table:",
     "source": "Exam Set 4",
-    "module": null
+    "module": "mod16"
   },
   {
     "id": "Exam Set 4-43",
@@ -3804,7 +3804,7 @@
     "correctIndex": 2,
     "explanation": "According to EC-council courseware: Whitelist validation Whitelist validation is a best practice whereby only the list of entities (i.e., data type, range, size, value, etc.) that have been approved for secured access is accepted. Whitelist validation can also be termed as positive validation or inclusion. Blacklist Validation Blacklist validation rejects all malicious inputs that have been disapproved for protected access. Blacklist validation can be challenging as every content and character of the attack should be interpreted, understood, and anticipated for future attacks as well. Blacklist validation can also be termed as negative validation or exclusion. Output Encoding Output encoding is a validation technique that can be used after input validation. This technique is used to encode the input to ensure that it is properly sanitized before passing it to the database. Enforcing Least Privileges Enforcing least privileges is a security best practice whereby the lowest level of privileges is assigned to every account accessing the database. It is recommended not to assign DBA level and administrator-level access rights to the application. In some critical situations, some applications may require elevated access rights; hence, proper groundwork should be done by the security professionals and they should also figure out the exact requirements of the application. Question 60: Which of the following services is running on port 21 by default?  Domain Name System  Border Gateway Protocol  Service Location Protocol  File Transfer Protocol (Correct) Explanation https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers https://en.wikipedia.org/wiki/File_Transfer_Protocol Port 21 - File Transfer Protocol (FTP) Incorrect answers: https://en.wikipedia.org/wiki/Border_Gateway_Protocol Port 179 - Border Gateway Protocol (BGP) https://en.wikipedia.org/wiki/Service_Location_Protocol Port 427 - Service Location Protocol (SLP) https://en.wikipedia.org/wiki/Domain_Name_System Port 53 - Domain Name System (DNS)",
     "source": "Exam Set 4",
-    "module": null
+    "module": "mod15"
   },
   {
     "id": "Exam Set 4-61",
@@ -3986,7 +3986,7 @@
     "correctIndex": 2,
     "explanation": "According to the EC-Council's training materials: Preparation The preparation phase includes performing an audit of resources and assets to determine the purpose of security and define the rules, policies, and procedures that drive the IH&R process. It also includes building and training an incident response team, defining incident readiness procedures, gathering required tools, and training the employees to secure their systems and accounts. Incident recording and assignment In this phase, the initial reporting and recording of the incident take place. This phase handles identifying an incident and defining proper incident communication plans for the employees and also includes communication methods that involve informing IT support personnel or submitting an appropriate ticket. Incident triage In this phase, the identified security incidents are analyzed, validated, categorized, and prioritized. The IH&R team further analyzes the compromised device to find incident details such as the type of attack, its severity, target, impact, method of propagation, and any vulnerabilities it exploited. Eradication In the eradication phase, the IH&R team removes or eliminates the root cause of the incident and closes all the attack vectors to prevent similar incidents in the future.",
     "source": "Exam Set 4",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "Exam Set 4-77",
@@ -4238,7 +4238,7 @@
     "correctIndex": 3,
     "explanation": "https://en.wikipedia.org/wiki/Yagi%E2%80%93Uda_antenna A Yagi–Uda antenna or simply Yagi antenna, is a directional antenna consisting of two or more parallel resonant antenna elements in an end-fire array; these elements are most often metal rods acting as half-wave dipoles. Yagi–Uda antennas consist of a single driven element connected to a radio transmitter and/or receiver through a transmission line, and additional \"parasitic elements\" with no electrical connection, usually including one so-called reflector and any number of directors. It was invented in 1926 by Shintaro Uda of Tohoku Imperial University, Japan, with a lesser role played by his colleague Hidetsugu Yagi. Reflector elements (usually only one is used) are slightly longer than the driven dipole and placed behind the driven element, opposite the direction of intended transmission. Directors, on the other hand, are a little shorter and placed in front of the driven element in the intended direction. These parasitic elements are typically off-tuned short-circuited dipole elements, that is, instead of a break at the feedpoint (like the driven element) a solid rod is used. They receive and reradiate the radio waves from the driven element but in a different phase determined by their exact lengths. Their effect is to modify the driven element's radiation pattern. The waves from the multiple elements superpose and interfere to enhance radiation in a single direction, increasing the antenna's gain in that direction. Also called a beam antenna and parasitic array, the Yagi is very widely used as a high- gain antenna on the HF, VHF and UHF bands. It has moderate to high gain depending on the number of elements present, sometimes reaching as high as 20 dBi, in a unidirectional beam pattern. As an end-fire array, it can achieve a front-to-back ratio of up to 20 dB. It retains the polarization common to its elements, usually linear polarization (its elements being half-wave dipoles). It is relatively lightweight, inexpensive and simple to construct.The bandwidth of a Yagi antenna, the frequency range over which it maintains its gain and feedpoint impedance, is narrow, just a few percent of the center frequency, decreasing for models with higher gain, making it ideal for fixed-frequency applications. The largest and best-known use is as rooftop terrestrial television antennas, but it is also used for point-to-point fixed communication links, in radar antennas, and for long distance shortwave communication by shortwave broadcasting stations and radio amateurs.",
     "source": "Exam Set 4",
-    "module": null
+    "module": "mod16"
   },
   {
     "id": "Exam Set 4-97",
@@ -4798,7 +4798,7 @@
     "correctIndex": 0,
     "explanation": "https://en.wikipedia.org/wiki/Residual_risk The residual risk is the risk or danger of an action or an event, a method or a (technical) process that, although being abreast with science, still conceives these dangers, even if all theoretically possible safety measures would be applied (scientifically conceivable measures); in other words, the amount of risk left over after natural or inherent risks have been reduced by risk controls. · Residual risk = (Inherent risk) – (impact of risk controls)",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Practice Questions-43",
@@ -4812,7 +4812,7 @@
     "correctIndex": 3,
     "explanation": "1. Preparation Among the most important of all the steps in an incident response plan is the preparation stage. During the preparation phase, organizations should establish policies and procedures for incident response management and enable efficient communication methods both before and after the incident. Employees should be properly trained to address security incidents and their respective roles. Companies need to develop incident response drill scenarios that are practiced regularly and modified as needed based on changes in the environment. All aspects of an incident response plan, including training, software and hardware resources, and execution, should be fully approved and funded before an incident occurs. 2. Identification The identification phase of an incident response plan involves determining whether or not an organization has been breached. It is not always clear at first whether a breach or other security incident has occurred. Besides, breaches can originate from a wide range of sources, so it is important to gather details. When determining whether a security incident has occurred, organizations should look at when the event happened, how it was discovered, and who discovered the breach. Companies should also consider how the incident will impact operations if other areas have been impacted and the compromise's scope. 3. Containment If it is discovered that a breach has occurred, organizations should work fast to contain the event. However, this should be done appropriately and does not require all sensitive data to be deleted from the system. Instead, strategies should be developed to contain the breach and prevent it from spreading further. This may involve disconnecting the impacted device from the internet or having a back-up system that can be used to restore normal business operations. Having remote access protocols in place can help ensure that a company never loses access to its system. 4. Neutralization Neutralization is one of the most crucial phases of the incident response process and requires the intelligence gathered throughout the previous stages. Once all systems and devices that have been impacted by the breach have been identified, an organization should perform a coordinated shutdown. To ensure that all employees are aware of the shutdown, employers should send out notifications to all other IT team members. Next, the infected systems and devices should be wiped clean and rebuilt. Passwords on all accounts should also be changed. If a business discovers that there are domains or IP addresses that have been affected, it is essential to block all communication that could pose a risk. 5. Recovery The recovery phase of an incident response plan involves restoring all affected systems and devices to allow for normal operations to continue. However, before getting systems back up and running, it is vital to ensure that the breach's cause has been identified to prevent another breach from occurring again. During this phase, consider how long it will take to return systems to normal, whether systems have been patched and tested, whether a system can be safely restored using a backup, and how long the system will need to be monitored. 6. Review The final step in an incident response plan occurs after the incident has been solved. Throughout the incident, all details should have been properly documented so that the information can be used to prevent similar breaches in the future. Businesses should complete a detailed incident report that suggests tips on how to improve the existing incident plan. Companies should also closely monitor any post-incident activities to look for threats. It is important to coordinate across all departments of an organization so that all employees are involved and can do their part to help prevent future security incidents.",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Practice Questions-44",
@@ -4840,7 +4840,7 @@
     "correctIndex": 0,
     "explanation": "https://en.wikipedia.org/wiki/Black-box_testing Black-box testing is a method of software testing that examines the functionality of an application without peering into its internal structures or workings. This method of test can be applied virtually to every level of software testing: unit, integration, system, and acceptance. It is sometimes referred to as specification-based testing. Specific knowledge of the application's code, internal structure, and programming knowledge, in general, is not required. The tester is aware of what the software is supposed to do but is not aware of how it does it. For instance, the tester is aware that a particular input returns a certain, invariable output but is not aware of how the software produces the output in the first place.",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Practice Questions-46",
@@ -5177,7 +5177,7 @@
     "correctIndex": 1,
     "explanation": "Most likely have an issue with DNS. DNS stands for “Domain Name System.” It’s a system that lets you connect to websites by matching human-readable domain names (like example.com) with the server's unique ID where a website is stored. Think of the DNS system as the internet’s phonebook. It lists domain names with their corresponding identifiers called IP addresses, instead of listing people’s names with their phone numbers. When a user enters a domain name like wpbeginner.com on their device, it looks up the IP address and connects them to the physical location where that website is stored. NOTE: Often DNS lookup information will be cached locally inside the querying computer or remotely in the DNS infrastructure. There are typically 8 steps in a DNS lookup. When DNS information is cached, steps are skipped from the DNS lookup process, making it quicker. The example below outlines all 8 steps when nothing is cached. The 8 steps in a DNS lookup: 1. A user types ‘example.com’ into a web browser, and the query travels into the Internet and is received by a DNS recursive resolver; 2. The resolver then queries a DNS root nameserver; 3. The root server then responds to the resolver with the address of a Top-Level Domain (TLD) DNS server (such as .com or .net), which stores the information for its domains. When searching for example.com, our request is pointed toward the .com TLD; 4. The resolver then requests the .com TLD; 5. The TLD server then responds with the IP address of the domain’s nameserver, example.com; 6. Lastly, the recursive resolver sends a query to the domain’s nameserver; 7. The IP address for example.com is then returned to the resolver from the nameserver; 8. The DNS resolver then responds to the web browser with the IP address of the domain requested initially; Once the 8 steps of the DNS lookup have returned the IP address for example.com, the browser can request the web page: 9. The browser makes an HTTP request to the IP address; 10. The server at that IP returns the webpage to be rendered in the browser. NOTE 2: DNS primarily uses the User Datagram Protocol (UDP) on port number 53 to serve requests. And if this port is blocked, then a problem arises already in the first step. But the ninth step is performed without problems.",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod02"
   },
   {
     "id": "Practice Questions-74",
@@ -5219,7 +5219,7 @@
     "correctIndex": 1,
     "explanation": "https://en.wikipedia.org/wiki/Fuzzing Fuzzing or fuzz testing is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. The program is then monitored for exceptions such as crashes, failing built-in code assertions, or potential memory leaks. Incorrect answers: Concolic testing https://en.wikipedia.org/wiki/Concolic_testing Concolic testing is a hybrid software verification technique that performs symbolic execution, a classical technique that treats program variables as symbolic variables along a concrete execution path. Symbolic execution is used in conjunction with an automated theorem prover or constaraint solver based on constraint logic programming to generate new concrete inputs (test cases) to maximize code coverage. Its main focus is finding bugs in real-world software rather than demonstrating program correctness. Monkey testing https://en.wikipedia.org/wiki/Monkey_testing Monkey testing is a technique where the user tests the application or system by providing random inputs and checking the behavior, or seeing whether the application or system will crash. Monkey testing is usually implemented as random, automated unit tests. Security testing https://en.wikipedia.org/wiki/Security_testing Security testing is a process intended to reveal flaws in the security mechanisms of an information system that protect data and maintain functionality as intended. Due to the logical limitations of security testing, passing the security testing process is not an indication that no flaws exist or that the system adequately satisfies the security requirements. Typical security requirements may include specific elements of confidentiality, integrity, authentication, availability, authorization and non-repudiation. Actual security requirements tested depend on the security requirements implemented by the system. Security testing as a term has a number of different meanings and can be completed in a number of different ways. As such, a Security Taxonomy helps us to understand these different approaches and meanings by providing a base level to work from.",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod05"
   },
   {
     "id": "Practice Questions-80",
@@ -5233,7 +5233,7 @@
     "correctIndex": 2,
     "explanation": "https://ahrefs.com/blog/google-advanced-search-operators/ site: Limit results to those from a specific website. Incorrect answers: inurl: Find pages with a certain word (or words) in the URL. For this example, any results containing the word “apple” in the URL will be returned. link: Find pages linking to a specific domain or URL. Google killed this operator in 2017, but it does still show some results—they likely aren’t particularly accurate though. cache: Returns the most recent cached version of a web page (providing the page is indexed, of course).",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod02"
   },
   {
     "id": "Practice Questions-81",
@@ -5247,7 +5247,7 @@
     "correctIndex": 0,
     "explanation": "1. AV (Asset value) = $300 + (14 * $10) = $440 - the cost of a hard drive plus the work of a recovery person, i.e.how much would it take to replace 1 asset? 10 hours for resorting the OS and soft + 4 hours for DB restore multiplies by hourly rate of the recovery person. 2. SLE (Single Loss Expectancy) = AV * EF (Exposure Factor) = $440 * 1 = $440 3. ARO (Annual rate of occurrence) = 1/3 (every three years, meaning the probability of occurring during 1 years is 1/3) 4. ALE (Annual Loss Expectancy) = SLE * ARO = 0.33 * $440 = $145.2",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Practice Questions-82",
@@ -5415,7 +5415,7 @@
     "correctIndex": 0,
     "explanation": "https://en.wikipedia.org/wiki/SOAP SOAP can be used with any application-level protocol: SMTP, FTP, HTTP, HTTPS, etc. However, its interaction with each of these protocols has its own characteristics, which must be defined separately. Most often SOAP is used over HTTP. SOAP (formerly an acronym for Simple Object Access Protocol) is a messaging protocol specification for exchanging structured information in the implementation of web services in computer networks. Its purpose is to provide extensibility, neutrality, verbosity and independence. It uses XML Information Set for its message format, and relies on application layer protocols, most often Hypertext Transfer Protocol (HTTP), although some legacy systems communicate over Simple Mail Transfer Protocol (SMTP), for message negotiation and transmission. SOAP allows developers to invoke processes running on disparate operating systems (such as Windows, macOS, and Linux) to authenticate, authorize, and communicate using Extensible Markup Language (XML). Since Web protocols like HTTP are installed and running on all operating systems, SOAP allows clients to invoke web services and receive responses independent of language and platforms. SOAP provides the Messaging Protocol layer of a web services protocol stack for web services. It is an XML-based protocol consisting of three parts: · an envelope, which defines the message structure and how to process it · a set of encoding rules for expressing instances of application-defined datatypes · a convention for representing procedure calls and responses SOAP has three major characteristics: extensibility (security and WS-Addressing are among the extensions under development) neutrality (SOAP can operate over any protocol such as HTTP, SMTP, TCP, UDP) independence (SOAP allows for any programming model) As an example of what SOAP procedures can do, an application can send a SOAP request to a server that has web services enabled—such as a real-estate price database—with the parameters for a search. The server then returns a SOAP response (an XML-formatted document with the resulting data), e.g., prices, location, features. Since the generated data comes in a standardized machine-parsable format, the requesting application can then integrate it directly.",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod14"
   },
   {
     "id": "Practice Questions-96",
@@ -5457,7 +5457,7 @@
     "correctIndex": 2,
     "explanation": "https://www.digitalcitizen.life/ways-open-computer-management-windows/ The Run window is quick method to open system tools in Windows. You can also use it to open Computer Management. Press the Win + R keys on your keyboard to open Run, enter the command compmgmt.msc, and then press Enter or OK. Incorrect answers: gpedit.msc gpedit.msc or Group Policy Editor is a configuration manager for Windows which makes it easier to configure Windows settings. Instead of going through Windows Registry, the user can configure different aspects of the Windows operating system through the Group Policy Editor ncpa.cpl Opens the Network Connections in Control panel. ncpa = Network Control Panel Applet, cpl = Control Panel services.msc Opens Windows Services Manager.",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "Practice Questions-99",
@@ -5653,7 +5653,7 @@
     "correctIndex": 1,
     "explanation": "I think this question is not needed in an explanation, but a question on this topic may occur in your exam, so you need to know how to answer it.",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "Practice Questions-113",
@@ -5737,7 +5737,7 @@
     "correctIndex": 1,
     "explanation": "https://en.wikipedia.org/wiki/Network_Time_Protocol The Network Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks. NTP is intended to synchronize all participating computers within a few milliseconds of Coordinated Universal Time (UTC). It uses the intersection algorithm, a modified version of Marzullo's algorithm, to select accurate time servers and is designed to mitigate variable network latency effects. NTP can usually maintain time to within tens of milliseconds over the public Internet and achieve better than one millisecond accuracy in local area networks. Asymmetric routes and network congestion can cause errors of 100 ms or more. The protocol is usually described in terms of a client-server model but can easily be used in peer-to-peer relationships where both peers consider the other to be a potential time source. Implementations send and receive timestamps using the User Datagram Protocol (UDP) on port number 123. Incorrect answers: https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers 19 - Character Generator Protocol (CHARGEN) 177 - X Display Manager Control Protocol (XDMCP) 161 - Simple Network Management Protocol (SNMP)",
     "source": "Practice Questions",
-    "module": null
+    "module": "mod04"
   },
   {
     "id": "Practice Questions-121",
@@ -5821,7 +5821,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod09"
   },
   {
     "id": "CEH v13 Dump-3",
@@ -5933,7 +5933,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod04"
   },
   {
     "id": "CEH v13 Dump-11",
@@ -6017,7 +6017,7 @@
     "correctIndex": 1,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod14"
   },
   {
     "id": "CEH v13 Dump-18",
@@ -6143,7 +6143,7 @@
     "correctIndex": 1,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod19"
   },
   {
     "id": "CEH v13 Dump-27",
@@ -6213,7 +6213,7 @@
     "correctIndex": 2,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod04"
   },
   {
     "id": "CEH v13 Dump-32",
@@ -6241,7 +6241,7 @@
     "correctIndex": 1,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod08"
   },
   {
     "id": "CEH v13 Dump-35",
@@ -6283,7 +6283,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod03"
   },
   {
     "id": "CEH v13 Dump-39",
@@ -6367,7 +6367,7 @@
     "correctIndex": 2,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "CEH v13 Dump-45",
@@ -6395,7 +6395,7 @@
     "correctIndex": 1,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod14"
   },
   {
     "id": "CEH v13 Dump-47",
@@ -6409,7 +6409,7 @@
     "correctIndex": 3,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod02"
   },
   {
     "id": "CEH v13 Dump-48",
@@ -6521,7 +6521,7 @@
     "correctIndex": 3,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "CEH v13 Dump-56",
@@ -6535,7 +6535,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "CEH v13 Dump-57",
@@ -6745,7 +6745,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod06"
   },
   {
     "id": "CEH v13 Dump-75",
@@ -6815,7 +6815,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "CEH v13 Dump-80",
@@ -6829,7 +6829,7 @@
     "correctIndex": 1,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod19"
   },
   {
     "id": "CEH v13 Dump-81",
@@ -6899,7 +6899,7 @@
     "correctIndex": 1,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod08"
   },
   {
     "id": "CEH v13 Dump-87",
@@ -6955,7 +6955,7 @@
     "correctIndex": 1,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod04"
   },
   {
     "id": "CEH v13 Dump-91",
@@ -7011,7 +7011,7 @@
     "correctIndex": 1,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod02"
   },
   {
     "id": "CEH v13 Dump-96",
@@ -7039,7 +7039,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod05"
   },
   {
     "id": "CEH v13 Dump-98",
@@ -7081,7 +7081,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod07"
   },
   {
     "id": "CEH v13 Dump-101",
@@ -7123,7 +7123,7 @@
     "correctIndex": 0,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod14"
   },
   {
     "id": "CEH v13 Dump-104",
@@ -7249,7 +7249,7 @@
     "correctIndex": 2,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod04"
   },
   {
     "id": "CEH v13 Dump-118",
@@ -7277,7 +7277,7 @@
     "correctIndex": 3,
     "explanation": "",
     "source": "CEH v13 Dump",
-    "module": null
+    "module": "mod01"
   },
   {
     "id": "CEH v13 Dump-120",
